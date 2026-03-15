@@ -331,20 +331,12 @@
         .btn-secondary:hover { background: var(--primary); color: white; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,84,166,0.3); }
 
         .hero-visual { position: relative; animation: fadeInRight 0.8s ease; }
-        .hero-card { background: var(--bg-card); border-radius: var(--radius-lg); padding: 40px; box-shadow: var(--shadow-xl); position: relative; border: 1px solid var(--border-light); }
-        .hero-card-icon { width: 80px; height: 80px; background: linear-gradient(135deg, #0054A6, #00A3E0); border-radius: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; margin-bottom: 24px; }
-        .hero-card h3 { font-size: 1.3rem; margin-bottom: 12px; }
-        .hero-card p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 24px; }
 
         .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
         .hero-stat { text-align: center; padding: 16px 8px; background: var(--bg-alt); border-radius: var(--radius); border: 1px solid var(--border-light); }
         .hero-stat .number { font-family: 'Poppins', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--primary); }
         .hero-stat .label { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
 
-        .floating-badge { position: absolute; background: var(--bg-card); padding: 12px 18px; border-radius: var(--radius); box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 10px; font-size: 0.85rem; font-weight: 600; animation: float 3s ease-in-out infinite; border: 1px solid var(--border-light); }
-        .floating-badge.badge-top { top: -20px; right: -20px; color: var(--green-whatsapp); }
-        .floating-badge.badge-bottom { bottom: -15px; left: -15px; color: var(--primary); }
-        .floating-badge i { font-size: 1.2rem; }
 
         /* ===== TRUST BAR ===== */
         .trust-bar { padding: 40px 0; background: var(--bg); border-bottom: 1px solid var(--border-light); }
@@ -536,27 +528,85 @@
         @keyframes particle-float-2 { 0%, 100% { transform: translate(0, 0) rotate(45deg); opacity: 0.5; } 33% { transform: translate(-120px, -200px) rotate(145deg); opacity: 0.8; } 66% { transform: translate(60px, -350px) rotate(245deg); opacity: 0.3; } }
         @keyframes particle-float-3 { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(80px, -250px) scale(1.5); } }
 
-        /* ===== HERO PARTICLES ===== */
+        /* ===== HERO PARTICLES (Floating Appliance Icons) ===== */
         .hero-particles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; pointer-events: none; z-index: 0; }
-        .particle { position: absolute; border-radius: 50%; pointer-events: none; }
-        .particle--circle { width: 12px; height: 12px; background: var(--primary); opacity: 0.15; }
-        .particle--square { width: 16px; height: 16px; border: 2px solid var(--accent); opacity: 0.12; border-radius: 3px; }
-        .particle--dot { width: 6px; height: 6px; background: var(--accent); opacity: 0.25; }
-        .particle--ring { width: 24px; height: 24px; border: 2px solid var(--primary); opacity: 0.1; }
-        .particle--cross { width: 14px; height: 14px; opacity: 0.1; position: absolute; }
-        .particle--cross::before, .particle--cross::after { content: ''; position: absolute; background: var(--primary); border-radius: 1px; }
-        .particle--cross::before { width: 14px; height: 2px; top: 6px; left: 0; }
-        .particle--cross::after { width: 2px; height: 14px; top: 0; left: 6px; }
-        .particle:nth-child(1) { top: 15%; left: 10%; animation: particle-float-1 12s ease-in-out infinite; }
-        .particle:nth-child(2) { top: 25%; right: 15%; animation: particle-float-2 15s ease-in-out infinite; }
-        .particle:nth-child(3) { top: 60%; left: 5%; animation: particle-float-3 10s ease-in-out infinite; }
-        .particle:nth-child(4) { top: 70%; right: 10%; animation: particle-float-1 18s ease-in-out infinite reverse; }
-        .particle:nth-child(5) { top: 40%; left: 30%; animation: particle-float-2 14s ease-in-out infinite; }
-        .particle:nth-child(6) { top: 20%; left: 60%; animation: particle-float-3 16s ease-in-out infinite; }
-        .particle:nth-child(7) { top: 80%; left: 70%; animation: particle-float-1 20s ease-in-out infinite; }
-        .particle:nth-child(8) { top: 10%; right: 35%; animation: particle-float-2 11s ease-in-out infinite reverse; }
-        .particle:nth-child(9) { top: 50%; right: 25%; animation: particle-float-3 13s ease-in-out infinite; }
-        .particle:nth-child(10) { top: 35%; left: 80%; animation: particle-float-1 17s ease-in-out infinite; }
+        .particle { position: absolute; pointer-events: none; color: var(--primary); }
+        .particle svg { width: 100%; height: 100%; }
+        .particle:nth-child(1) { width: 40px; height: 56px; top: 10%; left: 5%; opacity: 0.1; animation: particle-float-1 15s ease-in-out infinite; }
+        .particle:nth-child(2) { width: 38px; height: 42px; top: 60%; right: 6%; opacity: 0.07; animation: particle-float-2 18s ease-in-out infinite; }
+        .particle:nth-child(3) { width: 30px; height: 30px; top: 30%; left: 2%; opacity: 0.12; animation: particle-float-3 12s ease-in-out infinite; color: var(--accent); }
+        .particle:nth-child(4) { width: 26px; height: 38px; top: 75%; left: 12%; opacity: 0.06; animation: particle-float-1 20s ease-in-out infinite reverse; }
+        .particle:nth-child(5) { width: 32px; height: 32px; top: 15%; right: 15%; opacity: 0.09; animation: particle-float-2 14s ease-in-out infinite; color: var(--accent); }
+        .particle:nth-child(6) { width: 28px; height: 40px; top: 50%; left: 75%; opacity: 0.07; animation: particle-float-3 17s ease-in-out infinite; }
+        .particle:nth-child(7) { width: 36px; height: 26px; top: 5%; left: 50%; opacity: 0.08; animation: particle-float-1 13s ease-in-out infinite; color: var(--accent); }
+        .particle:nth-child(8) { width: 24px; height: 34px; top: 80%; right: 20%; opacity: 0.06; animation: particle-float-2 19s ease-in-out infinite reverse; }
+
+        /* ===== HERO APPLIANCE SCENE ===== */
+        .hero-scene { position: relative; width: 380px; height: 380px; margin: 0 auto; animation: fadeInRight 1s ease; }
+        .scene-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 240px; height: 240px; border-radius: 50%; background: radial-gradient(circle, rgba(0,163,224,0.25) 0%, rgba(0,84,166,0.1) 50%, transparent 70%); animation: glow-pulse 4s ease-in-out infinite; z-index: 0; }
+        [data-theme="dark"] .scene-glow { background: radial-gradient(circle, rgba(0,163,224,0.35) 0%, rgba(0,84,166,0.18) 50%, transparent 70%); }
+        .scene-ring { position: absolute; top: 50%; left: 50%; width: 310px; height: 310px; margin: -155px 0 0 -155px; border: 1.5px dashed var(--border); border-radius: 50%; opacity: 0.3; animation: rotate-slow 60s linear infinite; }
+        .scene-ring::after { content: ''; position: absolute; top: -5px; left: 50%; width: 10px; height: 10px; background: var(--accent); border-radius: 50%; transform: translateX(-50%); box-shadow: 0 0 12px rgba(0,163,224,0.5); }
+        .scene-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 130px; height: 130px; background: linear-gradient(135deg, #0054A6, #00A3E0); border-radius: 30px; display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 60px rgba(0,84,166,0.35); z-index: 3; color: white; animation: float 4s ease-in-out infinite; }
+        [data-theme="dark"] .scene-center { box-shadow: 0 20px 60px rgba(0,84,166,0.55); }
+        .scene-center::before { content: ''; position: absolute; inset: -3px; border-radius: 33px; background: linear-gradient(135deg, #0054A6, #00A3E0, #4da6ff, #00A3E0, #0054A6); background-size: 300% 300%; animation: gradient-shift 4s ease infinite; z-index: -1; }
+        .scene-center svg { width: 65px; height: 90px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
+        .orbit-item { position: absolute; width: 62px; height: 62px; background: var(--bg-card); border-radius: 16px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); color: var(--primary); z-index: 2; transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; }
+        .orbit-item:hover { box-shadow: var(--shadow-xl); border-color: var(--primary); z-index: 4; transform: scale(1.15); }
+        .orbit-item svg { width: 30px; height: 30px; }
+        .orbit-item:nth-child(4) { top: -8px; left: calc(50% - 31px); animation: float 3.5s ease-in-out infinite; }
+        .orbit-item:nth-child(5) { top: 17%; right: -8px; animation: float-delayed 4s ease-in-out infinite; }
+        .orbit-item:nth-child(6) { bottom: 17%; right: -8px; animation: float 3s ease-in-out infinite 0.5s; }
+        .orbit-item:nth-child(7) { bottom: -8px; left: calc(50% - 31px); animation: float-delayed 3.5s ease-in-out infinite 0.3s; }
+        .orbit-item:nth-child(8) { bottom: 17%; left: -8px; animation: float 4s ease-in-out infinite 1s; }
+        .orbit-item:nth-child(9) { top: 17%; left: -8px; animation: float-delayed 3s ease-in-out infinite 0.7s; }
+        /* Orbit item color accents */
+        .orbit-item:nth-child(4) svg { color: #0054A6; }
+        .orbit-item:nth-child(5) svg { color: #f59e0b; }
+        .orbit-item:nth-child(6) svg { color: #10b981; }
+        .orbit-item:nth-child(7) svg { color: #ef4444; }
+        .orbit-item:nth-child(8) svg { color: #8b5cf6; }
+        .orbit-item:nth-child(9) svg { color: #00A3E0; }
+        [data-theme="dark"] .orbit-item:nth-child(4) svg { color: #4da6ff; }
+        [data-theme="dark"] .orbit-item:nth-child(5) svg { color: #fbbf24; }
+        [data-theme="dark"] .orbit-item:nth-child(6) svg { color: #4ade80; }
+        [data-theme="dark"] .orbit-item:nth-child(7) svg { color: #f87171; }
+        [data-theme="dark"] .orbit-item:nth-child(8) svg { color: #a78bfa; }
+        [data-theme="dark"] .orbit-item:nth-child(9) svg { color: #38bdf8; }
+        /* Sparkle stars */
+        .scene-sparkles { position: absolute; inset: 0; z-index: 4; pointer-events: none; }
+        .sparkle { position: absolute; width: 10px; height: 10px; }
+        .sparkle::before, .sparkle::after { content: ''; position: absolute; background: var(--accent); border-radius: 1px; }
+        .sparkle::before { width: 10px; height: 2px; top: 4px; left: 0; }
+        .sparkle::after { width: 2px; height: 10px; top: 0; left: 4px; }
+        @keyframes sparkle-blink { 0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); } 50% { opacity: 0.8; transform: scale(1) rotate(45deg); } }
+        .sparkle:nth-child(1) { top: 22%; right: 18%; animation: sparkle-blink 2s ease-in-out infinite; }
+        .sparkle:nth-child(2) { bottom: 28%; left: 16%; animation: sparkle-blink 2.5s ease-in-out infinite 0.8s; }
+        .sparkle:nth-child(3) { top: 38%; left: 22%; animation: sparkle-blink 3s ease-in-out infinite 1.5s; }
+        .sparkle:nth-child(4) { bottom: 35%; right: 22%; animation: sparkle-blink 2.2s ease-in-out infinite 0.4s; }
+        .hero-scene + .hero-stats { margin-top: 24px; }
+
+        /* ===== SERVICE CARD ANIMATED SVG ICONS ===== */
+        .service-icon svg { width: 34px; height: 34px; }
+        .service-icon .icon-accent { opacity: 0; transition: opacity 0.4s; }
+        .service-card:hover .icon-accent { opacity: 1; }
+        @keyframes snowfall { 0% { transform: translateY(0); opacity: 0.8; } 100% { transform: translateY(12px); opacity: 0; } }
+        @keyframes spin-drum { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes flicker { 0%, 100% { opacity: 0.7; transform: scaleY(1); } 25% { opacity: 1; transform: scaleY(1.1); } 50% { opacity: 0.5; transform: scaleY(0.9); } 75% { opacity: 0.9; transform: scaleY(1.05); } }
+        @keyframes steam-rise { 0% { transform: translateY(0) scale(1); opacity: 0.6; } 100% { transform: translateY(-10px) scale(1.4); opacity: 0; } }
+        @keyframes wind-blow { 0% { transform: translateX(0); opacity: 0.7; } 100% { transform: translateX(8px); opacity: 0; } }
+        @keyframes pulse-bolt { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+        .service-card:hover .snow-particle { animation: snowfall 1.2s ease-in infinite; }
+        .service-card:hover .snow-particle:nth-child(2) { animation-delay: 0.3s; }
+        .service-card:hover .snow-particle:nth-child(3) { animation-delay: 0.6s; }
+        .service-card:hover .drum-spin { animation: spin-drum 1.5s linear infinite; transform-origin: center; }
+        .service-card:hover .flame-flicker { animation: flicker 0.8s ease-in-out infinite; transform-origin: bottom; }
+        .service-card:hover .steam-particle { animation: steam-rise 1.5s ease-out infinite; }
+        .service-card:hover .steam-particle:nth-child(2) { animation-delay: 0.5s; }
+        .service-card:hover .wind-line { animation: wind-blow 1s ease-out infinite; }
+        .service-card:hover .wind-line:nth-child(2) { animation-delay: 0.2s; }
+        .service-card:hover .wind-line:nth-child(3) { animation-delay: 0.4s; }
+        .service-card:hover .bolt-pulse { animation: pulse-bolt 0.6s ease-in-out infinite; }
 
         /* ===== HERO GRADIENT BLOBS ===== */
         .hero-blob { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; z-index: 0; }
@@ -600,9 +650,6 @@
         .service-card::after { content: ''; position: absolute; inset: 0; border-radius: var(--radius-lg); opacity: 0; transition: opacity 0.4s; background: linear-gradient(135deg, rgba(0,163,224,0.05) 0%, rgba(0,84,166,0.05) 100%); pointer-events: none; }
         .service-card:hover::after { opacity: 1; }
 
-        /* ===== ANIMATED GRADIENT BORDER ===== */
-        .hero-card { position: relative; }
-        .hero-card::before { content: ''; position: absolute; inset: -2px; border-radius: calc(var(--radius-lg) + 2px); background: linear-gradient(135deg, #0054A6, #00A3E0, #4da6ff, #00A3E0, #0054A6); background-size: 300% 300%; animation: gradient-shift 4s ease infinite; z-index: -1; }
 
         /* ===== GLOWING CTA BUTTONS ===== */
         .btn-primary { position: relative; overflow: hidden; }
@@ -697,10 +744,15 @@
             .trust-items { gap: 24px; }
             .footer-grid { grid-template-columns: 1fr; }
             .cta-box { padding: 48px 24px; }
-            .floating-badge { display: none; }
             .whatsapp-float a span { display: none; }
             .whatsapp-float a { padding: 16px; border-radius: 50%; }
             .hero-blob { display: none; }
+            .hero-scene { width: 300px; height: 300px; }
+            .scene-ring { width: 250px; height: 250px; margin: -125px 0 0 -125px; }
+            .scene-center { width: 100px; height: 100px; border-radius: 24px; }
+            .scene-center svg { width: 50px; height: 70px; }
+            .orbit-item { width: 50px; height: 50px; border-radius: 14px; }
+            .orbit-item svg { width: 24px; height: 24px; }
             .process-timeline-line { display: none; }
             .section-wave::after { height: 30px; }
         }
@@ -713,7 +765,7 @@
             .brands-list { gap: 20px; }
         }
     </style>
-    <noscript><style>.fade-in { opacity: 1; transform: none; }</style></noscript>
+    <noscript><style>.fade-in, .slide-left, .slide-right, .scale-in { opacity: 1; transform: none; }</style></noscript>
 </head>
 <body>
     <a href="#servicios" class="skip-link">Ir al contenido principal</a>
@@ -756,18 +808,24 @@
         <div class="hero-blob hero-blob--1" aria-hidden="true"></div>
         <div class="hero-blob hero-blob--2" aria-hidden="true"></div>
         <div class="hero-blob hero-blob--3" aria-hidden="true"></div>
-        <!-- Floating particles -->
+        <!-- Floating appliance icons -->
         <div class="hero-particles" aria-hidden="true">
-            <div class="particle particle--circle"></div>
-            <div class="particle particle--square"></div>
-            <div class="particle particle--dot"></div>
-            <div class="particle particle--ring"></div>
-            <div class="particle particle--cross"></div>
-            <div class="particle particle--dot"></div>
-            <div class="particle particle--circle"></div>
-            <div class="particle particle--square"></div>
-            <div class="particle particle--ring"></div>
-            <div class="particle particle--cross"></div>
+            <!-- Fridge -->
+            <div class="particle"><svg viewBox="0 0 32 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="2" width="24" height="44" rx="2"/><line x1="4" y1="16" x2="28" y2="16"/><rect x="22" y="7" width="2" height="5" rx="1" fill="currentColor"/><rect x="22" y="22" width="2" height="9" rx="1" fill="currentColor"/></svg></div>
+            <!-- Washing machine -->
+            <div class="particle"><svg viewBox="0 0 40 44" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="32" height="40" rx="3"/><circle cx="20" cy="27" r="11"/><circle cx="20" cy="27" r="5" stroke-dasharray="3 2"/><circle cx="12" cy="9" r="2.5"/><circle cx="21" cy="9" r="2.5"/></svg></div>
+            <!-- Snowflake (cooling) -->
+            <div class="particle"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="16" y1="2" x2="16" y2="30"/><line x1="4" y1="9" x2="28" y2="23"/><line x1="4" y1="23" x2="28" y2="9"/><line x1="16" y1="2" x2="12" y2="6"/><line x1="16" y1="2" x2="20" y2="6"/><line x1="16" y1="30" x2="12" y2="26"/><line x1="16" y1="30" x2="20" y2="26"/></svg></div>
+            <!-- Flame -->
+            <div class="particle"><svg viewBox="0 0 28 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M14 3C14 3 4 15 4 25C4 31 8 37 14 37C20 37 24 31 24 25C24 15 14 3 14 3Z"/><path d="M14 18C14 18 10 25 10 29C10 32 12 35 14 35C16 35 18 32 18 29C18 25 14 18 14 18Z" fill="currentColor" opacity="0.2"/></svg></div>
+            <!-- Wrench -->
+            <div class="particle"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 4a8 8 0 0 0-7 12L5 24l3 3 8-8a8 8 0 0 0 12-7"/><circle cx="22" cy="10" r="3"/></svg></div>
+            <!-- Water droplet -->
+            <div class="particle"><svg viewBox="0 0 24 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3C12 3 2 16 2 24C2 30 6 33 12 33C18 33 22 30 22 24C22 16 12 3 12 3Z"/></svg></div>
+            <!-- Wind / AC -->
+            <div class="particle"><svg viewBox="0 0 40 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8C7 8 11 3 16 3C21 3 21 8 26 8C31 8 35 3 37 3"/><path d="M3 14C7 14 11 9 16 9C21 9 21 14 26 14C31 14 35 9 37 9"/><path d="M3 20C7 20 11 15 16 15C21 15 21 20 26 20C31 20 35 15 37 15"/></svg></div>
+            <!-- Lightning bolt -->
+            <div class="particle"><svg viewBox="0 0 24 36" fill="currentColor" opacity="0.7"><path d="M14 2L4 18h7L8 34l14-20h-7z"/></svg></div>
         </div>
         <div class="container">
             <div class="hero-content">
@@ -780,17 +838,51 @@
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="hero-card">
-                    <div class="floating-badge badge-top" aria-hidden="true"><i class="fas fa-check-circle"></i> Garantía Incluida</div>
-                    <div class="floating-badge badge-bottom" aria-hidden="true"><i class="fas fa-bolt"></i> Respuesta Rápida</div>
-                    <div class="hero-card-icon" aria-hidden="true"><i class="fas fa-tools"></i></div>
-                    <h3>Servicio Técnico Profesional en Armenia</h3>
-                    <p>Más de una década de experiencia reparando todo tipo de electrodomésticos en el Quindío. Técnicos certificados.</p>
-                    <div class="hero-stats">
-                        <div class="hero-stat"><div class="number" data-target="10" data-suffix="+">0</div><div class="label">Años de Experiencia</div></div>
-                        <div class="hero-stat"><div class="number" data-target="12">0</div><div class="label">Municipios</div></div>
-                        <div class="hero-stat"><div class="number" data-target="98" data-suffix="%">0</div><div class="label">Satisfacción</div></div>
+                <div class="hero-scene" aria-hidden="true">
+                    <div class="scene-glow"></div>
+                    <div class="scene-ring"></div>
+                    <!-- Central fridge icon -->
+                    <div class="scene-center">
+                        <svg viewBox="0 0 60 90" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="8" y="4" width="44" height="82" rx="5"/>
+                            <line x1="8" y1="32" x2="52" y2="32"/>
+                            <rect x="42" y="14" width="3" height="8" rx="1.5" fill="white"/>
+                            <rect x="42" y="42" width="3" height="16" rx="1.5" fill="white"/>
+                            <g opacity="0.5"><line x1="24" y1="12" x2="24" y2="24"/><line x1="18" y1="15" x2="30" y2="21"/><line x1="18" y1="21" x2="30" y2="15"/></g>
+                            <g opacity="0.3"><circle cx="20" cy="55" r="1.5" fill="white"/><circle cx="30" cy="50" r="1" fill="white"/><circle cx="25" cy="65" r="1.2" fill="white"/></g>
+                        </svg>
                     </div>
+                    <!-- Orbiting appliance icons -->
+                    <div class="orbit-item" title="Lavadoras">
+                        <svg viewBox="0 0 32 36" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="1" width="26" height="34" rx="3"/><circle cx="16" cy="22" r="9"/><circle cx="16" cy="22" r="4" stroke-dasharray="2.5 2"/><circle cx="9" cy="7" r="2"/><circle cx="17" cy="7" r="2"/></svg>
+                    </div>
+                    <div class="orbit-item" title="Estufas">
+                        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4C16 4 8 12 8 18C8 23 11 27 16 27C21 27 24 23 24 18C24 12 16 4 16 4Z"/><path d="M16 14C16 14 12 19 12 21C12 24 14 26 16 26C18 26 20 24 20 21C20 19 16 14 16 14Z" fill="currentColor" opacity="0.25"/></svg>
+                    </div>
+                    <div class="orbit-item" title="Aire Acondicionado">
+                        <svg viewBox="0 0 34 26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="30" height="16" rx="3"/><line x1="7" y1="22" x2="7" y2="18"/><line x1="27" y1="22" x2="27" y2="18"/><path d="M9 11C11 9 13 13 15 11C17 9 19 13 21 11C23 9 25 13 25 11" stroke-width="1.5"/></svg>
+                    </div>
+                    <div class="orbit-item" title="Calentadores">
+                        <svg viewBox="0 0 28 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="6" width="20" height="24" rx="4"/><line x1="4" y1="2" x2="4" y2="6"/><line x1="24" y1="2" x2="24" y2="6"/><line x1="4" y1="30" x2="4" y2="34"/><line x1="24" y1="30" x2="24" y2="34"/><circle cx="14" cy="18" r="5"/><path d="M14 14v4l3 2" stroke-width="1.5"/></svg>
+                    </div>
+                    <div class="orbit-item" title="Relés Ahorradores">
+                        <svg viewBox="0 0 28 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16 4L6 18h7L10 32l14-18h-7z" fill="currentColor" opacity="0.15"/><path d="M16 4L6 18h7L10 32l14-18h-7z"/></svg>
+                    </div>
+                    <div class="orbit-item" title="Neveras">
+                        <svg viewBox="0 0 28 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="2" width="22" height="36" rx="2.5"/><line x1="3" y1="14" x2="25" y2="14"/><rect x="20" y="6" width="2" height="4" rx="1" fill="currentColor"/><rect x="20" y="20" width="2" height="8" rx="1" fill="currentColor"/><g opacity="0.4"><line x1="11" y1="6" x2="11" y2="11"/><line x1="8" y1="8.5" x2="14" y2="8.5"/></g></svg>
+                    </div>
+                    <!-- Repair sparkle stars -->
+                    <div class="scene-sparkles">
+                        <span class="sparkle"></span>
+                        <span class="sparkle"></span>
+                        <span class="sparkle"></span>
+                        <span class="sparkle"></span>
+                    </div>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat"><div class="number" data-target="10" data-suffix="+">0</div><div class="label">Años de Experiencia</div></div>
+                    <div class="hero-stat"><div class="number" data-target="12">0</div><div class="label">Municipios</div></div>
+                    <div class="hero-stat"><div class="number" data-target="98" data-suffix="%">0</div><div class="label">Satisfacción</div></div>
                 </div>
             </div>
         </div>
@@ -847,12 +939,12 @@
             <h2 class="section-title">Reparación de Electrodomésticos en Armenia, Quindío</h2>
             <p class="section-subtitle">Técnicos certificados con experiencia en todas las marcas. Diagnóstico preciso y reparación garantizada a domicilio en todo el Quindío.</p>
             <div class="services-grid">
-                <div class="service-card fade-in"><div class="service-icon blue" aria-hidden="true"><i class="fas fa-temperature-low"></i></div><h3>Reparación de Neveras en Armenia</h3><p>Reparación completa de sistemas de refrigeración doméstica e industrial. Samsung, LG, Whirlpool, Mabe y todas las marcas.</p><ul class="service-features"><li>Recarga de gas refrigerante</li><li>Cambio de compresor</li><li>Reparación de termostato</li><li>Cambio de motor ventilador</li></ul></div>
-                <div class="service-card fade-in"><div class="service-icon cyan" aria-hidden="true"><i class="fas fa-shirt"></i></div><h3>Reparación de Lavadoras en Quindío</h3><p>Servicio técnico especializado en lavadoras de carga frontal, superior y secadoras de ropa de todas las marcas.</p><ul class="service-features"><li>Cambio de rodamientos</li><li>Reparación de tarjetas electrónicas</li><li>Cambio de bomba de agua</li><li>Mantenimiento preventivo</li></ul></div>
-                <div class="service-card fade-in"><div class="service-icon orange" aria-hidden="true"><i class="fas fa-fire-flame-curved"></i></div><h3>Calentadores de Agua</h3><p>Instalación y reparación de calentadores de paso, acumulación, eléctricos y a gas en Armenia y todo el Quindío.</p><ul class="service-features"><li>Instalación de calentadores nuevos</li><li>Limpieza y desincrustación</li><li>Cambio de resistencias</li><li>Revisión de seguridad</li></ul></div>
-                <div class="service-card fade-in"><div class="service-icon red" aria-hidden="true"><i class="fas fa-fire-burner"></i></div><h3>Estufas y Hornos</h3><p>Reparación de estufas a gas, eléctricas, vitrocerámicas y hornos empotrados. Haceb, Challenger, Mabe y más.</p><ul class="service-features"><li>Cambio de quemadores</li><li>Reparación de válvulas</li><li>Revisión de fugas de gas</li><li>Cambio de termocuplas</li></ul></div>
-                <div class="service-card fade-in"><div class="service-icon green" aria-hidden="true"><i class="fas fa-wind"></i></div><h3>Aire Acondicionado en Quindío</h3><p>Instalación, mantenimiento y reparación de sistemas de aire acondicionado split y centralizado a domicilio.</p><ul class="service-features"><li>Instalación completa</li><li>Recarga de gas refrigerante</li><li>Limpieza de filtros y serpentín</li><li>Reparación de compresor</li></ul></div>
-                <div class="service-card fade-in"><div class="service-icon purple" aria-hidden="true"><i class="fas fa-bolt"></i></div><h3>Relés Ahorradores de Energía</h3><p>Instalación de relés con capacitadores para reducir hasta un 30% el consumo eléctrico de tu nevera. Ahorra en tu factura.</p><ul class="service-features"><li>Diagnóstico de consumo actual</li><li>Instalación de relé con capacitador</li><li>Ahorro hasta del 30% en factura</li><li>Protección del compresor</li></ul></div>
+                <div class="service-card fade-in"><div class="service-icon blue" aria-hidden="true"><svg viewBox="0 0 40 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="6" y="3" width="28" height="50" rx="3"/><line x1="6" y1="19" x2="34" y2="19"/><rect x="28" y="8" width="2.5" height="6" rx="1" fill="currentColor"/><rect x="28" y="26" width="2.5" height="12" rx="1" fill="currentColor"/><circle class="snow-particle icon-accent" cx="16" cy="10" r="1.5" fill="currentColor" opacity="0"/><circle class="snow-particle icon-accent" cx="22" cy="12" r="1" fill="currentColor" opacity="0"/><circle class="snow-particle icon-accent" cx="13" cy="14" r="1.2" fill="currentColor" opacity="0"/></svg></div><h3>Reparación de Neveras en Armenia</h3><p>Reparación completa de sistemas de refrigeración doméstica e industrial. Samsung, LG, Whirlpool, Mabe y todas las marcas.</p><ul class="service-features"><li>Recarga de gas refrigerante</li><li>Cambio de compresor</li><li>Reparación de termostato</li><li>Cambio de motor ventilador</li></ul></div>
+                <div class="service-card fade-in"><div class="service-icon cyan" aria-hidden="true"><svg viewBox="0 0 40 44" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="32" height="40" rx="3"/><circle cx="20" cy="27" r="11"/><circle class="drum-spin" cx="20" cy="27" r="5" stroke-dasharray="3 2"/><circle cx="12" cy="9" r="2.5"/><circle cx="20" cy="9" r="2.5"/></svg></div><h3>Reparación de Lavadoras en Quindío</h3><p>Servicio técnico especializado en lavadoras de carga frontal, superior y secadoras de ropa de todas las marcas.</p><ul class="service-features"><li>Cambio de rodamientos</li><li>Reparación de tarjetas electrónicas</li><li>Cambio de bomba de agua</li><li>Mantenimiento preventivo</li></ul></div>
+                <div class="service-card fade-in"><div class="service-icon orange" aria-hidden="true"><svg viewBox="0 0 36 44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="6" y="8" width="24" height="30" rx="4"/><line x1="6" y1="3" x2="6" y2="8"/><line x1="30" y1="3" x2="30" y2="8"/><line x1="6" y1="38" x2="6" y2="42"/><line x1="30" y1="38" x2="30" y2="42"/><circle cx="18" cy="23" r="6"/><path d="M18 18v5l3.5 2.5" stroke-width="1.5"/><circle class="steam-particle icon-accent" cx="14" cy="5" r="1.5" fill="currentColor" opacity="0"/><circle class="steam-particle icon-accent" cx="22" cy="3" r="1" fill="currentColor" opacity="0"/></svg></div><h3>Calentadores de Agua</h3><p>Instalación y reparación de calentadores de paso, acumulación, eléctricos y a gas en Armenia y todo el Quindío.</p><ul class="service-features"><li>Instalación de calentadores nuevos</li><li>Limpieza y desincrustación</li><li>Cambio de resistencias</li><li>Revisión de seguridad</li></ul></div>
+                <div class="service-card fade-in"><div class="service-icon red" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="18" width="32" height="18" rx="3"/><circle cx="13" cy="12" r="3"/><circle cx="27" cy="12" r="3"/><path class="flame-flicker" d="M13 6C13 6 10 9 10 11C10 12.7 11.3 14 13 14C14.7 14 16 12.7 16 11C16 9 13 6 13 6Z" fill="currentColor" opacity="0.3"/><path class="flame-flicker" d="M27 5C27 5 24 8 24 10.5C24 12.4 25.3 14 27 14C28.7 14 30 12.4 30 10.5C30 8 27 5 27 5Z" fill="currentColor" opacity="0.3" style="animation-delay:0.2s"/></svg></div><h3>Estufas y Hornos</h3><p>Reparación de estufas a gas, eléctricas, vitrocerámicas y hornos empotrados. Haceb, Challenger, Mabe y más.</p><ul class="service-features"><li>Cambio de quemadores</li><li>Reparación de válvulas</li><li>Revisión de fugas de gas</li><li>Cambio de termocuplas</li></ul></div>
+                <div class="service-card fade-in"><div class="service-icon green" aria-hidden="true"><svg viewBox="0 0 40 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="2" width="34" height="18" rx="3"/><line x1="9" y1="24" x2="9" y2="20"/><line x1="31" y1="24" x2="31" y2="20"/><path class="wind-line icon-accent" d="M10 9C12 7 14 11 17 9C20 7 22 11 24 9C26 7 28 11 30 9" stroke-width="1.5" opacity="0"/><path class="wind-line icon-accent" d="M10 13C12 11 14 15 17 13C20 11 22 15 24 13C26 11 28 15 30 13" stroke-width="1.5" opacity="0"/><path class="wind-line icon-accent" d="M10 11C12 9 14 13 17 11C20 9 22 13 24 11" stroke-width="1.5" opacity="0"/></svg></div><h3>Aire Acondicionado en Quindío</h3><p>Instalación, mantenimiento y reparación de sistemas de aire acondicionado split y centralizado a domicilio.</p><ul class="service-features"><li>Instalación completa</li><li>Recarga de gas refrigerante</li><li>Limpieza de filtros y serpentín</li><li>Reparación de compresor</li></ul></div>
+                <div class="service-card fade-in"><div class="service-icon purple" aria-hidden="true"><svg viewBox="0 0 34 44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 4L7 22h8L12 40l16-22h-8z"/><path class="bolt-pulse icon-accent" d="M19 4L7 22h8L12 40l16-22h-8z" fill="currentColor" opacity="0"/><circle cx="28" cy="8" r="2" fill="currentColor" opacity="0.4"/><circle cx="6" cy="36" r="1.5" fill="currentColor" opacity="0.3"/></svg></div><h3>Relés Ahorradores de Energía</h3><p>Instalación de relés con capacitadores para reducir hasta un 30% el consumo eléctrico de tu nevera. Ahorra en tu factura.</p><ul class="service-features"><li>Diagnóstico de consumo actual</li><li>Instalación de relé con capacitador</li><li>Ahorro hasta del 30% en factura</li><li>Protección del compresor</li></ul></div>
             </div>
         </div>
     </section>
