@@ -309,8 +309,7 @@
 
         /* ===== HERO ===== */
         .hero { padding: 140px 0 80px; background: linear-gradient(135deg, var(--primary-light) 0%, var(--bg) 50%, var(--accent-light) 100%); position: relative; overflow: hidden; }
-        .hero::before { content: ''; position: absolute; top: -50%; right: -20%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(0,163,224,0.08) 0%, transparent 70%); border-radius: 50%; }
-        .hero::after { content: ''; position: absolute; bottom: -30%; left: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(0,84,166,0.06) 0%, transparent 70%); border-radius: 50%; }
+        .hero::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 60px; background: var(--bg); clip-path: ellipse(55% 100% at 50% 100%); z-index: 2; }
         .hero .container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 1; }
 
         .hero-content { animation: fadeInUp 0.8s ease; }
@@ -444,8 +443,6 @@
         .step-number { width: 56px; height: 56px; background: linear-gradient(135deg, #0054A6, #00A3E0); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Poppins', sans-serif; font-size: 1.3rem; font-weight: 800; color: white; margin: 0 auto 20px; }
         .process-step h3 { font-family: 'Poppins', sans-serif; font-size: 1.05rem; margin-bottom: 8px; }
         .process-step p { font-size: 0.88rem; color: var(--text-muted); }
-        .step-connector { position: absolute; top: 58px; right: -12px; width: 24px; height: 2px; background: var(--border); }
-        .process-step:last-child .step-connector { display: none; }
 
         /* ===== FAQ ===== */
         .faq { padding: 100px 0; background: var(--bg-alt); }
@@ -517,22 +514,163 @@
         .back-to-top:hover { background: var(--primary-dark); }
 
         /* ===== ANIMATIONS ===== */
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeInRight { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-        @keyframes pulse-green { 0%, 100% { box-shadow: 0 6px 24px rgba(37,211,102,0.5); } 50% { box-shadow: 0 6px 30px rgba(37,211,102,0.7), 0 0 0 10px rgba(37,211,102,0.15); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInRight { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes fadeInLeft { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes scaleIn { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+        @keyframes float-delayed { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-18px) rotate(5deg); } }
+        @keyframes pulse-green { 0%, 100% { box-shadow: 0 6px 24px rgba(37,211,102,0.5); } 50% { box-shadow: 0 6px 30px rgba(37,211,102,0.7), 0 0 0 12px rgba(37,211,102,0.15); } }
+        @keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
+        @keyframes rotate-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes morph { 0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; } 50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; } }
+        @keyframes draw-line { from { stroke-dashoffset: 1000; } to { stroke-dashoffset: 0; } }
+        @keyframes glow-pulse { 0%, 100% { box-shadow: 0 0 20px rgba(0,163,224,0.3), 0 0 60px rgba(0,84,166,0.1); } 50% { box-shadow: 0 0 30px rgba(0,163,224,0.5), 0 0 80px rgba(0,84,166,0.2); } }
+        @keyframes slide-up-stagger { from { opacity: 0; transform: translateY(60px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
+        @keyframes gradient-shift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        @keyframes ping { 0% { transform: scale(1); opacity: 1; } 75%, 100% { transform: scale(2); opacity: 0; } }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        @keyframes typewriter { from { width: 0; } to { width: 100%; } }
+        @keyframes blink-caret { 0%, 100% { border-color: transparent; } 50% { border-color: var(--accent); } }
+        @keyframes particle-float-1 { 0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.6; } 25% { transform: translate(100px, -150px) rotate(90deg); opacity: 0.3; } 50% { transform: translate(-50px, -300px) rotate(180deg); opacity: 0.7; } 75% { transform: translate(80px, -150px) rotate(270deg); opacity: 0.4; } }
+        @keyframes particle-float-2 { 0%, 100% { transform: translate(0, 0) rotate(45deg); opacity: 0.5; } 33% { transform: translate(-120px, -200px) rotate(145deg); opacity: 0.8; } 66% { transform: translate(60px, -350px) rotate(245deg); opacity: 0.3; } }
+        @keyframes particle-float-3 { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(80px, -250px) scale(1.5); } }
 
-        .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        /* ===== HERO PARTICLES ===== */
+        .hero-particles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; pointer-events: none; z-index: 0; }
+        .particle { position: absolute; border-radius: 50%; pointer-events: none; }
+        .particle--circle { width: 12px; height: 12px; background: var(--primary); opacity: 0.15; }
+        .particle--square { width: 16px; height: 16px; border: 2px solid var(--accent); opacity: 0.12; border-radius: 3px; }
+        .particle--dot { width: 6px; height: 6px; background: var(--accent); opacity: 0.25; }
+        .particle--ring { width: 24px; height: 24px; border: 2px solid var(--primary); opacity: 0.1; }
+        .particle--cross { width: 14px; height: 14px; opacity: 0.1; position: absolute; }
+        .particle--cross::before, .particle--cross::after { content: ''; position: absolute; background: var(--primary); border-radius: 1px; }
+        .particle--cross::before { width: 14px; height: 2px; top: 6px; left: 0; }
+        .particle--cross::after { width: 2px; height: 14px; top: 0; left: 6px; }
+        .particle:nth-child(1) { top: 15%; left: 10%; animation: particle-float-1 12s ease-in-out infinite; }
+        .particle:nth-child(2) { top: 25%; right: 15%; animation: particle-float-2 15s ease-in-out infinite; }
+        .particle:nth-child(3) { top: 60%; left: 5%; animation: particle-float-3 10s ease-in-out infinite; }
+        .particle:nth-child(4) { top: 70%; right: 10%; animation: particle-float-1 18s ease-in-out infinite reverse; }
+        .particle:nth-child(5) { top: 40%; left: 30%; animation: particle-float-2 14s ease-in-out infinite; }
+        .particle:nth-child(6) { top: 20%; left: 60%; animation: particle-float-3 16s ease-in-out infinite; }
+        .particle:nth-child(7) { top: 80%; left: 70%; animation: particle-float-1 20s ease-in-out infinite; }
+        .particle:nth-child(8) { top: 10%; right: 35%; animation: particle-float-2 11s ease-in-out infinite reverse; }
+        .particle:nth-child(9) { top: 50%; right: 25%; animation: particle-float-3 13s ease-in-out infinite; }
+        .particle:nth-child(10) { top: 35%; left: 80%; animation: particle-float-1 17s ease-in-out infinite; }
+
+        /* ===== HERO GRADIENT BLOBS ===== */
+        .hero-blob { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; z-index: 0; }
+        .hero-blob--1 { width: 500px; height: 500px; background: rgba(0,84,166,0.12); top: -15%; right: -10%; animation: morph 15s ease-in-out infinite; }
+        .hero-blob--2 { width: 400px; height: 400px; background: rgba(0,163,224,0.1); bottom: -20%; left: -5%; animation: morph 12s ease-in-out infinite reverse; }
+        .hero-blob--3 { width: 300px; height: 300px; background: rgba(77,166,255,0.08); top: 40%; left: 40%; animation: morph 18s ease-in-out infinite 3s; }
+        [data-theme="dark"] .hero-blob--1 { background: rgba(0,84,166,0.2); }
+        [data-theme="dark"] .hero-blob--2 { background: rgba(0,163,224,0.15); }
+        [data-theme="dark"] .hero-blob--3 { background: rgba(77,166,255,0.12); }
+
+        /* ===== ANIMATED LOGO ===== */
+        .logo-icon { position: relative; overflow: hidden; }
+        .logo-icon svg { width: 26px; height: 26px; }
+        .logo-icon .gear { transform-origin: center; animation: rotate-slow 8s linear infinite; }
+        .logo:hover .logo-icon .gear { animation-duration: 2s; }
+        .logo:hover .logo-icon { transform: scale(1.1); transition: transform 0.3s; }
+
+        /* ===== SCROLL ANIMATIONS ===== */
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .slide-left { opacity: 0; transform: translateX(-50px); transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+        .slide-left.visible { opacity: 1; transform: translateX(0); }
+        .slide-right { opacity: 0; transform: translateX(50px); transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+        .slide-right.visible { opacity: 1; transform: translateX(0); }
+        .scale-in { opacity: 0; transform: scale(0.85); transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+        .scale-in.visible { opacity: 1; transform: scale(1); }
+        .services-grid .fade-in:nth-child(1) { transition-delay: 0s; }
         .services-grid .fade-in:nth-child(2) { transition-delay: 0.1s; }
         .services-grid .fade-in:nth-child(3) { transition-delay: 0.2s; }
-        .services-grid .fade-in:nth-child(4) { transition-delay: 0.1s; }
-        .services-grid .fade-in:nth-child(5) { transition-delay: 0.2s; }
-        .services-grid .fade-in:nth-child(6) { transition-delay: 0.3s; }
+        .services-grid .fade-in:nth-child(4) { transition-delay: 0.3s; }
+        .services-grid .fade-in:nth-child(5) { transition-delay: 0.4s; }
+        .services-grid .fade-in:nth-child(6) { transition-delay: 0.5s; }
+        .why-grid .fade-in:nth-child(1) { transition-delay: 0s; }
+        .why-grid .fade-in:nth-child(2) { transition-delay: 0.15s; }
+        .why-grid .fade-in:nth-child(3) { transition-delay: 0.3s; }
+        .why-grid .fade-in:nth-child(4) { transition-delay: 0.45s; }
+
+        /* ===== 3D SERVICE CARD TILT ===== */
+        .service-card { perspective: 1000px; transform-style: preserve-3d; }
+        .service-card:hover { transform: translateY(-8px); }
+        .service-card::after { content: ''; position: absolute; inset: 0; border-radius: var(--radius-lg); opacity: 0; transition: opacity 0.4s; background: linear-gradient(135deg, rgba(0,163,224,0.05) 0%, rgba(0,84,166,0.05) 100%); pointer-events: none; }
+        .service-card:hover::after { opacity: 1; }
+
+        /* ===== ANIMATED GRADIENT BORDER ===== */
+        .hero-card { position: relative; }
+        .hero-card::before { content: ''; position: absolute; inset: -2px; border-radius: calc(var(--radius-lg) + 2px); background: linear-gradient(135deg, #0054A6, #00A3E0, #4da6ff, #00A3E0, #0054A6); background-size: 300% 300%; animation: gradient-shift 4s ease infinite; z-index: -1; }
+
+        /* ===== GLOWING CTA BUTTONS ===== */
+        .btn-primary { position: relative; overflow: hidden; }
+        .btn-primary::before { content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0; background: rgba(255,255,255,0.2); border-radius: 50%; transform: translate(-50%, -50%); transition: width 0.6s, height 0.6s; }
+        .btn-primary:hover::before { width: 300px; height: 300px; }
+        .btn-white { position: relative; overflow: hidden; }
+        .btn-white::before { content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0; background: rgba(0,84,166,0.08); border-radius: 50%; transform: translate(-50%, -50%); transition: width 0.6s, height 0.6s; }
+        .btn-white:hover::before { width: 300px; height: 300px; }
+
+        /* ===== BRANDS MARQUEE ===== */
+        .brands-marquee { overflow: hidden; position: relative; }
+        .brands-marquee::before, .brands-marquee::after { content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none; }
+        .brands-marquee::before { left: 0; background: linear-gradient(90deg, var(--bg-alt), transparent); }
+        .brands-marquee::after { right: 0; background: linear-gradient(270deg, var(--bg-alt), transparent); }
+        .brands-track { display: flex; gap: 48px; animation: marquee 25s linear infinite; width: max-content; align-items: center; }
+        .brands-track:hover { animation-play-state: paused; }
+        .brand-name { white-space: nowrap; font-family: 'Poppins', sans-serif; font-size: 1.15rem; font-weight: 700; color: var(--text-muted); opacity: 0.45; transition: opacity 0.3s, color 0.3s, transform 0.3s; cursor: default; }
+        .brand-name:hover { opacity: 1; color: var(--primary); transform: scale(1.1); }
+
+        /* ===== PROCESS TIMELINE ===== */
+        .process-steps { position: relative; }
+        .process-timeline-line { position: absolute; top: 52px; left: 12.5%; right: 12.5%; height: 3px; background: var(--border); z-index: 0; overflow: hidden; border-radius: 2px; }
+        .process-timeline-fill { width: 0; height: 100%; background: linear-gradient(90deg, #0054A6, #00A3E0); border-radius: 2px; transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1); }
+        .process-timeline-line.animated .process-timeline-fill { width: 100%; }
+        .process-step { position: relative; z-index: 1; }
+        .step-number { position: relative; z-index: 2; transition: transform 0.4s, box-shadow 0.4s; }
+        .step-number::after { content: ''; position: absolute; inset: -4px; border-radius: 50%; border: 2px solid var(--accent); opacity: 0; transition: opacity 0.4s, transform 0.4s; }
+        .process-step:hover .step-number { transform: scale(1.15); box-shadow: 0 8px 25px rgba(0,84,166,0.3); }
+        .process-step:hover .step-number::after { opacity: 1; }
+
+        /* ===== PULSING COVERAGE DOTS ===== */
+        .city-tag { position: relative; }
+        .city-tag .ping { display: none; }
+        .city-tag.capital .ping { display: block; position: absolute; top: 50%; left: 14px; width: 8px; height: 8px; transform: translateY(-50%); }
+        .city-tag.capital .ping::before { content: ''; position: absolute; inset: 0; background: rgba(255,255,255,0.6); border-radius: 50%; animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite; }
+
+        /* ===== SECTION DIVIDERS ===== */
+        .section-wave { position: relative; }
+        .section-wave::after { content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 60px; background: var(--bg-alt); clip-path: ellipse(55% 100% at 50% 100%); }
+
+        /* ===== SHIMMER TEXT ===== */
+        .shimmer-text { background: linear-gradient(90deg, var(--text-heading) 0%, var(--primary) 25%, var(--accent) 50%, var(--primary) 75%, var(--text-heading) 100%); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: shimmer 4s linear infinite; }
+
+        /* ===== TESTIMONIAL CARD HOVER GLOW ===== */
+        .testimonial-card { position: relative; }
+        .testimonial-card::before { content: ''; position: absolute; inset: -1px; border-radius: var(--radius-lg); background: linear-gradient(135deg, transparent, rgba(0,163,224,0.3), transparent); opacity: 0; transition: opacity 0.4s; z-index: -1; }
+        .testimonial-card:hover::before { opacity: 1; }
+
+        /* ===== CTA ANIMATED BACKGROUND ===== */
+        .cta-box { background: linear-gradient(135deg, #003d7a, #0054A6, #00A3E0, #0054A6); background-size: 300% 300%; animation: gradient-shift 6s ease infinite; }
+
+        /* ===== WHY-CARD ICON ANIMATION ===== */
+        .why-icon { transition: transform 0.4s, box-shadow 0.4s; }
+        .why-card:hover .why-icon { transform: scale(1.12) rotate(5deg); box-shadow: 0 8px 30px rgba(0,84,166,0.2); }
+
+        /* ===== SAVINGS CARD GLOW ===== */
+        .savings-card { animation: glow-pulse 3s ease-in-out infinite; }
+
+        /* ===== FAQ SMOOTH OPEN ===== */
+        .faq-answer { transition: max-height 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+
+        /* ===== HERO TYPING CURSOR ===== */
+        .typing-cursor { display: inline-block; width: 3px; height: 1em; background: var(--accent); margin-left: 4px; animation: blink-caret 0.8s step-end infinite; vertical-align: text-bottom; }
 
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
-            .fade-in { opacity: 1; transform: none; }
+            .fade-in, .slide-left, .slide-right, .scale-in { opacity: 1; transform: none; }
+            .brands-track { animation: none; }
             html { scroll-behavior: auto; }
         }
 
@@ -541,7 +679,6 @@
             .services-grid { grid-template-columns: repeat(2, 1fr); }
             .why-grid { grid-template-columns: repeat(2, 1fr); }
             .process-steps { grid-template-columns: repeat(2, 1fr); }
-            .step-connector { display: none; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
         }
 
@@ -563,6 +700,9 @@
             .floating-badge { display: none; }
             .whatsapp-float a span { display: none; }
             .whatsapp-float a { padding: 16px; border-radius: 50%; }
+            .hero-blob { display: none; }
+            .process-timeline-line { display: none; }
+            .section-wave::after { height: 30px; }
         }
 
         @media (max-width: 480px) {
@@ -582,7 +722,12 @@
     <nav class="navbar" id="navbar" role="navigation" aria-label="Navegación principal">
         <div class="container">
             <a href="#inicio" class="logo" aria-label="ServiTec Quindío - Inicio">
-                <div class="logo-icon" aria-hidden="true"><i class="fas fa-wrench"></i></div>
+                <div class="logo-icon" aria-hidden="true">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="white">
+                        <g class="gear"><path d="M50 15a3 3 0 0 1 3 3v5.2a22 22 0 0 1 8.5 3.5l3.7-3.7a3 3 0 0 1 4.2 4.2l-3.7 3.7A22 22 0 0 1 69.2 40H74.5a3 3 0 1 1 0 6H69.2a22 22 0 0 1-3.5 8.5l3.7 3.7a3 3 0 0 1-4.2 4.2l-3.7-3.7a22 22 0 0 1-8.5 3.5V67.5a3 3 0 1 1-6 0V62.2a22 22 0 0 1-8.5-3.5l-3.7 3.7a3 3 0 0 1-4.2-4.2l3.7-3.7A22 22 0 0 1 30.8 46H25.5a3 3 0 1 1 0-6H30.8a22 22 0 0 1 3.5-8.5l-3.7-3.7a3 3 0 0 1 4.2-4.2l3.7 3.7A22 22 0 0 1 47 23.8V18a3 3 0 0 1 3-3zm0 20a8 8 0 1 0 0 16 8 8 0 0 0 0-16z"/></g>
+                        <path d="M28 62l-12 22a4 4 0 0 0 3.5 5.8h5a4 4 0 0 0 3.5-2.1L40 68" stroke="white" stroke-width="5" fill="none" stroke-linecap="round"/>
+                    </svg>
+                </div>
                 ServiTec <span>Quindío</span>
             </a>
             <ul class="nav-links" id="navLinks">
@@ -607,10 +752,27 @@
 
     <!-- HERO -->
     <section class="hero" id="inicio">
+        <!-- Animated gradient blobs -->
+        <div class="hero-blob hero-blob--1" aria-hidden="true"></div>
+        <div class="hero-blob hero-blob--2" aria-hidden="true"></div>
+        <div class="hero-blob hero-blob--3" aria-hidden="true"></div>
+        <!-- Floating particles -->
+        <div class="hero-particles" aria-hidden="true">
+            <div class="particle particle--circle"></div>
+            <div class="particle particle--square"></div>
+            <div class="particle particle--dot"></div>
+            <div class="particle particle--ring"></div>
+            <div class="particle particle--cross"></div>
+            <div class="particle particle--dot"></div>
+            <div class="particle particle--circle"></div>
+            <div class="particle particle--square"></div>
+            <div class="particle particle--ring"></div>
+            <div class="particle particle--cross"></div>
+        </div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-badge"><i class="fas fa-circle" aria-hidden="true"></i> Servicio Técnico #1 en el Quindío</div>
-                <h1>Reparación de<br>Electrodomésticos<br><span class="highlight">en Armenia y Todo el Quindío</span></h1>
+                <h1>Reparación de<br><span class="shimmer-text">Electrodomésticos</span><br><span class="highlight">en Armenia y Todo el Quindío</span></h1>
                 <p>Servicio técnico profesional a domicilio. Reparamos neveras, lavadoras, calentadores, estufas y aires acondicionados con garantía en cada trabajo. Atendemos Armenia, Calarcá, Montenegro y todos los municipios.</p>
                 <div class="hero-buttons">
                     <a href="https://wa.me/573188383917?text=Hola%2C%20necesito%20un%20servicio%20t%C3%A9cnico%20para%20mi%20electrodom%C3%A9stico.%20%C2%BFMe%20pueden%20ayudar%3F" target="_blank" rel="noopener noreferrer" class="btn-primary"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar Servicio</a>
@@ -651,7 +813,9 @@
     <section class="brands" aria-label="Marcas que reparamos">
         <div class="container">
             <p>Reparamos todas las marcas</p>
-            <div class="brands-list">
+        </div>
+        <div class="brands-marquee">
+            <div class="brands-track">
                 <span class="brand-name">Samsung</span>
                 <span class="brand-name">LG</span>
                 <span class="brand-name">Whirlpool</span>
@@ -660,6 +824,18 @@
                 <span class="brand-name">Challenger</span>
                 <span class="brand-name">Electrolux</span>
                 <span class="brand-name">Centrales</span>
+                <span class="brand-name">Bosch</span>
+                <span class="brand-name">General Electric</span>
+                <span class="brand-name">Samsung</span>
+                <span class="brand-name">LG</span>
+                <span class="brand-name">Whirlpool</span>
+                <span class="brand-name">Mabe</span>
+                <span class="brand-name">Haceb</span>
+                <span class="brand-name">Challenger</span>
+                <span class="brand-name">Electrolux</span>
+                <span class="brand-name">Centrales</span>
+                <span class="brand-name">Bosch</span>
+                <span class="brand-name">General Electric</span>
             </div>
         </div>
     </section>
@@ -713,7 +889,7 @@
                 <a href="https://wa.me/573188383917?text=Hola%2C%20estoy%20interesado%20en%20el%20rel%C3%A9%20ahorrador%20de%20energ%C3%ADa%20para%20mi%20nevera.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%3F" target="_blank" rel="noopener noreferrer" class="btn-primary btn-primary--inverted"><i class="fab fa-whatsapp" aria-hidden="true"></i> Quiero Ahorrar Energía</a>
             </div>
             <div class="savings-visual">
-                <div class="savings-card fade-in">
+                <div class="savings-card scale-in">
                     <div class="big-icon" aria-hidden="true"><i class="fas fa-leaf"></i></div>
                     <h3>Hasta 30%</h3>
                     <p>de ahorro en tu factura de energía eléctrica mensual</p>
@@ -730,14 +906,14 @@
             <h2 class="section-title">Servicio Técnico a Domicilio en Todo el Quindío</h2>
             <p class="section-subtitle">Atendemos los 12 municipios del departamento. Servicio a domicilio sin importar dónde te encuentres en el Quindío.</p>
             <div class="coverage-content">
-                <div class="coverage-map-placeholder fade-in">
+                <div class="coverage-map-placeholder slide-left">
                     <i class="fas fa-map-location-dot" aria-hidden="true"></i>
                     <h3>Departamento del Quindío</h3>
                     <p>Cobertura total en los 12 municipios</p>
                     <div class="coverage-phone-box"><p><i class="fas fa-phone" aria-hidden="true"></i> Agenda tu cita: <a href="tel:+573188383917">318 838 3917</a></p></div>
                 </div>
-                <div class="cities-grid fade-in">
-                    <div class="city-tag capital"><i class="fas fa-star" aria-hidden="true"></i> Armenia (Capital)</div>
+                <div class="cities-grid slide-right">
+                    <div class="city-tag capital"><i class="fas fa-star" aria-hidden="true"></i> Armenia (Capital)<span class="ping" aria-hidden="true"></span></div>
                     <div class="city-tag"><i class="fas fa-location-dot" aria-hidden="true"></i> Calarcá</div>
                     <div class="city-tag"><i class="fas fa-location-dot" aria-hidden="true"></i> Montenegro</div>
                     <div class="city-tag"><i class="fas fa-location-dot" aria-hidden="true"></i> Circasia</div>
@@ -761,9 +937,10 @@
             <h2 class="section-title">Tu Electrodoméstico Reparado en 4 Pasos</h2>
             <p class="section-subtitle">Un proceso sencillo para que no tengas que preocuparte por nada. Nosotros nos encargamos de todo.</p>
             <div class="process-steps">
-                <div class="process-step fade-in"><div class="step-number" aria-hidden="true">1</div><h3>Contáctanos</h3><p>Escríbenos por WhatsApp al 3188383917 o llámanos. Cuéntanos qué electrodoméstico necesita reparación.</p><div class="step-connector" aria-hidden="true"></div></div>
-                <div class="process-step fade-in"><div class="step-number" aria-hidden="true">2</div><h3>Diagnóstico</h3><p>Nuestro técnico visita tu hogar en Armenia o cualquier municipio del Quindío y realiza un diagnóstico completo.</p><div class="step-connector" aria-hidden="true"></div></div>
-                <div class="process-step fade-in"><div class="step-number" aria-hidden="true">3</div><h3>Reparación</h3><p>Con tu aprobación, realizamos la reparación usando repuestos de calidad y técnicas profesionales.</p><div class="step-connector" aria-hidden="true"></div></div>
+                <div class="process-timeline-line" aria-hidden="true"><div class="process-timeline-fill"></div></div>
+                <div class="process-step fade-in"><div class="step-number" aria-hidden="true">1</div><h3>Contáctanos</h3><p>Escríbenos por WhatsApp al 3188383917 o llámanos. Cuéntanos qué electrodoméstico necesita reparación.</p></div>
+                <div class="process-step fade-in"><div class="step-number" aria-hidden="true">2</div><h3>Diagnóstico</h3><p>Nuestro técnico visita tu hogar en Armenia o cualquier municipio del Quindío y realiza un diagnóstico completo.</p></div>
+                <div class="process-step fade-in"><div class="step-number" aria-hidden="true">3</div><h3>Reparación</h3><p>Con tu aprobación, realizamos la reparación usando repuestos de calidad y técnicas profesionales.</p></div>
                 <div class="process-step fade-in"><div class="step-number" aria-hidden="true">4</div><h3>Garantía</h3><p>Te entregamos tu electrodoméstico funcionando con garantía por escrito del servicio realizado.</p></div>
             </div>
         </div>
@@ -816,7 +993,7 @@
     <!-- CTA -->
     <section class="cta" aria-label="Llamada a la acción">
         <div class="container">
-            <div class="cta-box fade-in">
+            <div class="cta-box scale-in">
                 <h2>¿Tu Electrodoméstico No Funciona? Tiene Solución</h2>
                 <p>No esperes más. Contáctanos ahora y un técnico profesional te atenderá hoy mismo. Servicio a domicilio en Armenia y todo el Quindío.</p>
                 <div class="cta-buttons">
@@ -832,7 +1009,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="#inicio" class="logo" aria-label="ServiTec Quindío - Inicio"><div class="logo-icon" aria-hidden="true"><i class="fas fa-wrench"></i></div>ServiTec <span>Quindío</span></a>
+                    <a href="#inicio" class="logo" aria-label="ServiTec Quindío - Inicio"><div class="logo-icon" aria-hidden="true"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="white"><g class="gear"><path d="M50 15a3 3 0 0 1 3 3v5.2a22 22 0 0 1 8.5 3.5l3.7-3.7a3 3 0 0 1 4.2 4.2l-3.7 3.7A22 22 0 0 1 69.2 40H74.5a3 3 0 1 1 0 6H69.2a22 22 0 0 1-3.5 8.5l3.7 3.7a3 3 0 0 1-4.2 4.2l-3.7-3.7a22 22 0 0 1-8.5 3.5V67.5a3 3 0 1 1-6 0V62.2a22 22 0 0 1-8.5-3.5l-3.7 3.7a3 3 0 0 1-4.2-4.2l3.7-3.7A22 22 0 0 1 30.8 46H25.5a3 3 0 1 1 0-6H30.8a22 22 0 0 1 3.5-8.5l-3.7-3.7a3 3 0 0 1 4.2-4.2l3.7 3.7A22 22 0 0 1 47 23.8V18a3 3 0 0 1 3-3zm0 20a8 8 0 1 0 0 16 8 8 0 0 0 0-16z"/></g><path d="M28 62l-12 22a4 4 0 0 0 3.5 5.8h5a4 4 0 0 0 3.5-2.1L40 68" stroke="white" stroke-width="5" fill="none" stroke-linecap="round"/></svg></div>ServiTec <span>Quindío</span></a>
                     <p>Servicio técnico profesional #1 en reparación de electrodomésticos a domicilio en Armenia y todo el departamento del Quindío. Neveras, lavadoras, calentadores, estufas, aires acondicionados y relés ahorradores de energía. Técnicos certificados con garantía en cada trabajo.</p>
                 </div>
                 <div>
@@ -939,11 +1116,52 @@
             });
         }, { passive: true });
 
-        // === SCROLL ANIMATIONS ===
+        // === SCROLL ANIMATIONS (all animation classes) ===
         const obs = new IntersectionObserver(entries => {
             entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
         }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-        document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+        document.querySelectorAll('.fade-in, .slide-left, .slide-right, .scale-in').forEach(el => obs.observe(el));
+
+        // === PROCESS TIMELINE ANIMATION ===
+        const timelineObs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('animated');
+                    timelineObs.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        const timeline = document.querySelector('.process-timeline-line');
+        if (timeline) timelineObs.observe(timeline);
+
+        // === 3D TILT EFFECT ON SERVICE CARDS ===
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = ((y - centerY) / centerY) * -5;
+                const rotateY = ((x - centerX) / centerX) * 5;
+                card.style.transform = `translateY(-8px) perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+            });
+        });
+
+        // === PARALLAX BLOBS ON SCROLL ===
+        const blobs = document.querySelectorAll('.hero-blob');
+        if (blobs.length) {
+            window.addEventListener('scroll', () => {
+                const y = window.scrollY;
+                blobs.forEach((blob, i) => {
+                    const speed = 0.03 + i * 0.015;
+                    blob.style.transform = `translateY(${y * speed}px)`;
+                });
+            }, { passive: true });
+        }
 
         // === COUNTER ANIMATION ===
         const cObs = new IntersectionObserver(entries => {
