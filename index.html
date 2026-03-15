@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>ServiTec Quindío | Reparación de Electrodomésticos en Armenia y Todo el Quindío</title>
     <meta name="description" content="Servicio técnico #1 en reparación de electrodomésticos en Armenia y todo el Quindío. Neveras, lavadoras, calentadores, estufas, aires acondicionados y relés ahorradores de energía. Servicio a domicilio con garantía. WhatsApp 3188383917.">
-    <meta name="keywords" content="reparación electrodomésticos Armenia Quindío, técnico neveras Armenia, reparación lavadoras Quindío, servicio aire acondicionado Armenia, reparación estufas Quindío, calentadores Armenia, relé ahorrador nevera Quindío, capacitador nevera Armenia, técnico electrodomésticos Calarcá, reparación electrodomésticos Montenegro, servicio técnico Circasia, reparación neveras La Tebaida, electrodomésticos Salento, ahorro energía nevera Quindío, reparación electrodomésticos a domicilio Armenia, mejor técnico electrodomésticos Quindío, servicio técnico neveras cerca de mi Armenia">
+    <meta name="keywords" content="reparación electrodomésticos Armenia Quindío, técnico neveras Armenia, reparación lavadoras Quindío, servicio aire acondicionado Armenia, reparación estufas Quindío, calentadores Armenia, relé ahorrador nevera Quindío, mi nevera no enfría Armenia, lavadora no centrifuga Quindío, nevera hace ruido, estufa no enciende Armenia, aire acondicionado no enfría Quindío, calentador no calienta, lavadora bota agua, nevera congela todo, técnico electrodomésticos cerca de mi Armenia, reparación Samsung Armenia, servicio técnico LG Quindío, reparación Whirlpool Armenia, técnico Mabe Haceb Quindío, reparación urgente electrodomésticos Armenia, servicio a domicilio electrodomésticos Quindío, mantenimiento aire acondicionado Armenia, técnico electrodomésticos Calarcá Montenegro Circasia La Tebaida, reparación neveras lavadoras a domicilio Armenia Quindío, mejor técnico electrodomésticos Armenia">
     <meta name="author" content="ServiTec Quindío">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="geo.region" content="CO-QUI">
@@ -167,6 +167,26 @@
                 "@type": "Question",
                 "name": "¿Cuánto cuesta la reparación de un electrodoméstico en Armenia?",
                 "acceptedAnswer": {"@type": "Answer", "text": "El costo varía según el tipo de electrodoméstico y la falla. Ofrecemos diagnóstico con presupuesto antes de reparar, sin compromiso. Contáctanos por WhatsApp al 3188383917 para una cotización gratuita."}
+            },
+            {
+                "@type": "Question",
+                "name": "¿Mi nevera no enfría, qué puede ser?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Si tu nevera prende pero no enfría, las causas más comunes son: falta de gas refrigerante, compresor dañado, termostato defectuoso o condensador sucio. Un técnico de ServiTec Quindío puede diagnosticar y reparar el problema el mismo día."}
+            },
+            {
+                "@type": "Question",
+                "name": "¿Por qué mi lavadora no centrifuga?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Las razones más comunes son: correa rota o desgastada, capacitor de arranque dañado, carbones del motor gastados o problema en la tarjeta electrónica. Reparamos lavadoras Samsung, LG, Whirlpool, Mabe y Haceb a domicilio en Armenia."}
+            },
+            {
+                "@type": "Question",
+                "name": "¿Reparan neveras y lavadoras Samsung y LG en Armenia, Quindío?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Sí, somos especialistas en reparación de electrodomésticos Samsung, LG, Whirlpool, Mabe, Haceb, Challenger, Electrolux y Centrales en Armenia y todo el Quindío. Usamos repuestos compatibles y ofrecemos garantía."}
+            },
+            {
+                "@type": "Question",
+                "name": "¿Ofrecen servicio de reparación urgente de electrodomésticos en Armenia?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Sí, ofrecemos atención prioritaria para reparaciones urgentes en Armenia y municipios cercanos del Quindío. Contáctanos por WhatsApp al 3188383917 indicando que es urgente."}
             }
         ]
     }
@@ -711,8 +731,55 @@
         /* ===== FAQ SMOOTH OPEN ===== */
         .faq-answer { transition: max-height 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
 
-        /* ===== HERO TYPING CURSOR ===== */
-        .typing-cursor { display: inline-block; width: 3px; height: 1em; background: var(--accent); margin-left: 4px; animation: blink-caret 0.8s step-end infinite; vertical-align: text-bottom; }
+        /* ===== SCROLL PROGRESS BAR ===== */
+        .scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #0054A6, #00A3E0, #4da6ff); z-index: 10001; width: 0; border-radius: 0 2px 2px 0; box-shadow: 0 0 8px rgba(0,163,224,0.5); transition: none; }
+
+        /* ===== CUSTOM SCROLLBAR ===== */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--bg-alt); }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #0054A6, #00A3E0); border-radius: 5px; border: 2px solid var(--bg-alt); }
+        ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #003d7a, #0054A6); }
+        html { scrollbar-color: #0054A6 var(--bg-alt); scrollbar-width: thin; }
+
+        /* ===== MOUSE SPOTLIGHT ON CARDS ===== */
+        .service-card { --mouse-x: 50%; --mouse-y: 50%; }
+        .service-card::after { background: radial-gradient(350px circle at var(--mouse-x) var(--mouse-y), rgba(0,163,224,0.07), transparent 60%); }
+
+        /* ===== SUBTLE DOT GRID BACKGROUND ===== */
+        .services, .faq, .process { background-image: radial-gradient(circle, var(--border) 0.8px, transparent 0.8px); background-size: 28px 28px; }
+
+        /* ===== COMMON PROBLEMS SECTION ===== */
+        .problems { padding: 100px 0; background: var(--bg); }
+        .problems .container { text-align: center; }
+        .problems-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: left; }
+        .problem-card { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius); padding: 24px; transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s; cursor: default; }
+        .problem-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: var(--shadow-md); }
+        .problem-card .problem-icon { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; font-weight: 700; color: var(--text-heading); font-size: 0.95rem; }
+        .problem-card .problem-icon i { color: #ef4444; font-size: 1.1rem; }
+        .problem-card .problem-icon .solved { color: #10b981; }
+        .problem-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 12px; }
+        .problem-card .solution-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 0.78rem; font-weight: 600; color: #10b981; background: rgba(16,185,129,0.08); padding: 4px 12px; border-radius: 50px; }
+        [data-theme="dark"] .problem-card .solution-tag { background: rgba(16,185,129,0.15); }
+
+        /* ===== WHATSAPP CHAT PREVIEW ===== */
+        .whatsapp-float { position: fixed; bottom: 24px; right: 24px; z-index: 9999; }
+        .wa-toggle { display: flex; align-items: center; gap: 12px; background: var(--green-whatsapp); color: white; padding: 14px 24px; border-radius: 50px; font-weight: 600; font-size: 1rem; box-shadow: 0 6px 24px rgba(37,211,102,0.5); transition: transform 0.3s, box-shadow 0.3s; animation: pulse-green 2s infinite; border: none; cursor: pointer; }
+        .wa-toggle:hover { transform: scale(1.05); box-shadow: 0 8px 30px rgba(37,211,102,0.6); }
+        .wa-toggle i { font-size: 1.4rem; }
+        .wa-chat { position: absolute; bottom: 70px; right: 0; width: 340px; background: var(--bg-card); border-radius: 16px; box-shadow: var(--shadow-xl); border: 1px solid var(--border); overflow: hidden; opacity: 0; visibility: hidden; transform: translateY(20px) scale(0.95); transition: opacity 0.3s, visibility 0.3s, transform 0.3s; }
+        .wa-chat.open { opacity: 1; visibility: visible; transform: translateY(0) scale(1); }
+        .wa-chat-header { background: #075E54; color: white; padding: 16px 20px; display: flex; align-items: center; gap: 12px; }
+        .wa-chat-avatar { width: 40px; height: 40px; background: linear-gradient(135deg, #0054A6, #00A3E0); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+        .wa-chat-name { font-weight: 600; font-size: 0.95rem; }
+        .wa-chat-status { font-size: 0.75rem; opacity: 0.8; }
+        .wa-chat-body { padding: 20px; background: #ECE5DD; min-height: 120px; }
+        [data-theme="dark"] .wa-chat-body { background: #0b1520; }
+        .wa-msg { background: white; padding: 10px 14px; border-radius: 0 12px 12px 12px; max-width: 85%; font-size: 0.88rem; color: #303030; box-shadow: 0 1px 2px rgba(0,0,0,0.1); margin-bottom: 8px; line-height: 1.5; }
+        [data-theme="dark"] .wa-msg { background: var(--bg-card); color: var(--text); }
+        .wa-msg .wa-time { display: block; text-align: right; font-size: 0.7rem; color: #999; margin-top: 4px; }
+        .wa-chat-input { padding: 12px 16px; border-top: 1px solid var(--border); display: flex; gap: 10px; }
+        .wa-chat-input a { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--green-whatsapp); color: white; padding: 10px; border-radius: 50px; font-weight: 600; font-size: 0.88rem; transition: background 0.3s; }
+        .wa-chat-input a:hover { background: #20ba5a; }
 
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
@@ -726,6 +793,7 @@
             .services-grid { grid-template-columns: repeat(2, 1fr); }
             .why-grid { grid-template-columns: repeat(2, 1fr); }
             .process-steps { grid-template-columns: repeat(2, 1fr); }
+            .problems-grid { grid-template-columns: repeat(2, 1fr); }
             .footer-grid { grid-template-columns: 1fr 1fr; }
         }
 
@@ -737,8 +805,11 @@
             .hero p { margin: 0 auto 36px; }
             .hero-buttons { justify-content: center; }
             .hero-visual { max-width: 400px; margin: 0 auto; }
-            .services-grid, .process-steps { grid-template-columns: 1fr; }
+            .services-grid, .process-steps, .problems-grid { grid-template-columns: 1fr; }
             .coverage-content, .testimonials-grid { grid-template-columns: 1fr; }
+            .wa-chat { width: 300px; right: -8px; }
+            .wa-toggle span { display: none; }
+            .wa-toggle { padding: 16px; border-radius: 50%; }
             .savings-banner .container { grid-template-columns: 1fr; text-align: center; }
             .savings-card { margin: 0 auto; }
             .trust-items { gap: 24px; }
@@ -768,6 +839,7 @@
     <noscript><style>.fade-in, .slide-left, .slide-right, .scale-in { opacity: 1; transform: none; }</style></noscript>
 </head>
 <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
     <a href="#servicios" class="skip-link">Ir al contenido principal</a>
 
     <!-- NAVBAR -->
@@ -784,7 +856,7 @@
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#problemas">Problemas</a></li>
                 <li><a href="#ahorro">Ahorro</a></li>
                 <li><a href="#cobertura">Cobertura</a></li>
                 <li><a href="#preguntas">FAQ</a></li>
@@ -949,6 +1021,62 @@
         </div>
     </section>
 
+    <!-- COMMON PROBLEMS (SEO: targets top search phrases) -->
+    <section class="problems" id="problemas">
+        <div class="container">
+            <span class="section-tag">Problemas Comunes</span>
+            <h2 class="section-title">¿Tu Electrodoméstico Presenta Alguno de Estos Problemas?</h2>
+            <p class="section-subtitle">Estos son los problemas más comunes que solucionamos a diario en Armenia y todo el Quindío. ¡Todos tienen solución!</p>
+            <div class="problems-grid">
+                <div class="problem-card fade-in">
+                    <div class="problem-icon"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Mi nevera no enfría</div>
+                    <p>Tu nevera prende pero no enfría ni abajo ni arriba. Puede ser falta de gas refrigerante, compresor dañado o termostato defectuoso. Es la falla más común en neveras Samsung, LG, Whirlpool y Mabe.</p>
+                    <span class="solution-tag"><i class="fas fa-check-circle solved" aria-hidden="true"></i> Solución el mismo día</span>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="problem-icon"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Lavadora no centrifuga</div>
+                    <p>La lavadora lava pero no centrifuga ni exprime la ropa. Generalmente es la correa, el capacitor de arranque o los carbones del motor. Reparamos todas las marcas a domicilio.</p>
+                    <span class="solution-tag"><i class="fas fa-check-circle solved" aria-hidden="true"></i> Diagnóstico + reparación</span>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="problem-icon"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Nevera hace ruido extraño</div>
+                    <p>Ruido fuerte, zumbido o clic constante en la nevera. Puede indicar problemas en el motor ventilador, el compresor o el sistema de deshielo. No lo ignores, puede empeorar.</p>
+                    <span class="solution-tag"><i class="fas fa-check-circle solved" aria-hidden="true"></i> Revisión con garantía</span>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="problem-icon"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Estufa no enciende</div>
+                    <p>La estufa de gas no enciende o la chispa no prende. Puede ser el encendedor piezoeléctrico, las termocuplas o un problema con la válvula de gas. Revisamos fugas de seguridad.</p>
+                    <span class="solution-tag"><i class="fas fa-check-circle solved" aria-hidden="true"></i> Revisión de seguridad incluida</span>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="problem-icon"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Aire acondicionado no enfría</div>
+                    <p>El aire acondicionado prende pero no enfría o bota agua. Falta de gas, filtros sucios o fuga en el sistema. Servicio de mantenimiento y recarga de gas en todo el Quindío.</p>
+                    <span class="solution-tag"><i class="fas fa-check-circle solved" aria-hidden="true"></i> Mantenimiento completo</span>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="problem-icon"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Calentador no calienta el agua</div>
+                    <p>El calentador de agua no enciende o no calienta. Puede ser la resistencia, el termostato o problemas de presión. Reparamos calentadores de paso, eléctricos y a gas.</p>
+                    <span class="solution-tag"><i class="fas fa-check-circle solved" aria-hidden="true"></i> Instalación y reparación</span>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="problem-icon"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Lavadora bota agua por debajo</div>
+                    <p>Fuga de agua en la lavadora durante el lavado o centrifugado. Generalmente es la bomba de agua, una manguera rota o el sello de la tina. Reparación urgente a domicilio.</p>
+                    <span class="solution-tag"><i class="fas fa-check-circle solved" aria-hidden="true"></i> Reparación urgente</span>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="problem-icon"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Nevera congela todo</div>
+                    <p>La nevera congela los alimentos en la parte de abajo o forma mucho hielo. Problema con el termostato, el sensor de temperatura o el sistema de deshielo automático.</p>
+                    <span class="solution-tag"><i class="fas fa-check-circle solved" aria-hidden="true"></i> Ajuste y calibración</span>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="problem-icon"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Factura de energía muy alta</div>
+                    <p>Tu nevera consume demasiada energía y la factura de luz sube cada mes. Instalamos relés ahorradores con capacitador que reducen el consumo hasta un 30%.</p>
+                    <span class="solution-tag"><i class="fas fa-check-circle solved" aria-hidden="true"></i> Ahorro garantizado</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- WHY US -->
     <section class="why-us" id="nosotros">
         <div class="container">
@@ -1052,6 +1180,11 @@
                 <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false">¿Cuánto cuesta la reparación de un electrodoméstico?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer"><p>El costo varía según el electrodoméstico y la falla. Ofrecemos diagnóstico con presupuesto antes de reparar, sin compromiso. Aceptamos efectivo, Nequi y Daviplata.</p></div></div>
                 <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false">¿Cuánto puedo ahorrar con el relé ahorrador?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer"><p>Con la instalación de un relé con capacitador, puedes reducir el consumo eléctrico de tu nevera hasta en un 30%. El ahorro varía según el modelo y estado del equipo.</p></div></div>
                 <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false">¿Atienden en Calarcá, Montenegro y otros municipios?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer"><p>Sí, atendemos los 12 municipios del Quindío: Armenia, Calarcá, Montenegro, Circasia, La Tebaida, Salento, Filandia, Quimbaya, Buenavista, Córdoba, Génova y Pijao.</p></div></div>
+                <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false">¿Mi nevera no enfría, qué puede ser?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer"><p>Si tu nevera prende pero no enfría, las causas más comunes son: falta de gas refrigerante, compresor dañado, termostato defectuoso o condensador sucio. Un técnico de ServiTec Quindío puede diagnosticar y reparar el problema el mismo día en Armenia y todo el Quindío.</p></div></div>
+                <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false">¿Por qué mi lavadora no centrifuga?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer"><p>Las razones más comunes por las que una lavadora no centrifuga son: correa rota o desgastada, capacitor de arranque dañado, carbones del motor gastados o problema en la tarjeta electrónica. Reparamos lavadoras Samsung, LG, Whirlpool, Mabe y Haceb a domicilio.</p></div></div>
+                <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false">¿Reparan neveras y lavadoras Samsung, LG y Whirlpool en Armenia?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer"><p>Sí, somos especialistas en reparación de electrodomésticos Samsung, LG, Whirlpool, Mabe, Haceb, Challenger, Electrolux y Centrales en Armenia y todo el Quindío. Usamos repuestos compatibles y ofrecemos garantía en cada reparación.</p></div></div>
+                <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false">¿Hacen mantenimiento preventivo de aires acondicionados?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer"><p>Sí, ofrecemos servicio completo de mantenimiento de aires acondicionados: limpieza de filtros, limpieza de serpentín, revisión de gas y verificación del sistema eléctrico. El mantenimiento preventivo ahorra energía y prolonga la vida útil del equipo.</p></div></div>
+                <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false">¿Ofrecen servicio de reparación urgente en Armenia?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer"><p>Sí, ofrecemos atención prioritaria para reparaciones urgentes en Armenia y municipios cercanos. Contáctanos por WhatsApp al 3188383917 indicando que es urgente y agendaremos un técnico lo antes posible.</p></div></div>
             </div>
         </div>
     </section>
@@ -1134,8 +1267,22 @@
         </div>
     </footer>
 
-    <!-- WHATSAPP FLOAT -->
-    <div class="whatsapp-float"><a href="https://wa.me/573188383917?text=Hola%2C%20necesito%20un%20servicio%20t%C3%A9cnico.%20%C2%BFMe%20pueden%20ayudar%3F" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i><span>WhatsApp</span></a></div>
+    <!-- WHATSAPP CHAT PREVIEW -->
+    <div class="whatsapp-float">
+        <div class="wa-chat" id="waChat">
+            <div class="wa-chat-header">
+                <div class="wa-chat-avatar">ST</div>
+                <div><div class="wa-chat-name">ServiTec Quindío</div><div class="wa-chat-status">En línea</div></div>
+            </div>
+            <div class="wa-chat-body">
+                <div class="wa-msg">¡Hola! 👋 Soy el equipo de ServiTec Quindío. ¿Tu electrodoméstico no funciona? Cuéntanos qué problema tienes y te ayudamos hoy mismo.<span class="wa-time">Ahora</span></div>
+            </div>
+            <div class="wa-chat-input">
+                <a href="https://wa.me/573188383917?text=Hola%2C%20necesito%20un%20servicio%20t%C3%A9cnico%20para%20mi%20electrodom%C3%A9stico.%20%C2%BFMe%20pueden%20ayudar%3F" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Iniciar Conversación</a>
+            </div>
+        </div>
+        <button class="wa-toggle" id="waToggle" aria-label="Abrir chat de WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i><span>WhatsApp</span></button>
+    </div>
 
     <!-- BACK TO TOP -->
     <button class="back-to-top" id="backToTop" aria-label="Volver arriba"><i class="fas fa-chevron-up" aria-hidden="true"></i></button>
@@ -1171,13 +1318,19 @@
             if (!localStorage.getItem('theme')) setTheme(e.matches ? 'dark' : 'light');
         });
 
-        // === NAVBAR SCROLL + BACK TO TOP ===
+        // === SCROLL PROGRESS BAR ===
+        const scrollProgress = document.getElementById('scrollProgress');
+
+        // === NAVBAR SCROLL + BACK TO TOP + PROGRESS ===
         const navbar = document.getElementById('navbar');
         const backToTop = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {
             const y = window.scrollY;
             navbar.classList.toggle('scrolled', y > 50);
             backToTop.classList.toggle('visible', y > 600);
+            // Update scroll progress bar
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            if (docHeight > 0) scrollProgress.style.width = (y / docHeight * 100) + '%';
         }, { passive: true });
 
         backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
@@ -1288,6 +1441,27 @@
                 const t = document.querySelector(h);
                 if (t) { e.preventDefault(); window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' }); }
             });
+        });
+
+        // === MOUSE SPOTLIGHT ON SERVICE CARDS ===
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                card.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px');
+                card.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px');
+            });
+        });
+
+        // === WHATSAPP CHAT TOGGLE ===
+        const waToggle = document.getElementById('waToggle');
+        const waChat = document.getElementById('waChat');
+        waToggle.addEventListener('click', () => {
+            const isOpen = waChat.classList.toggle('open');
+            waToggle.setAttribute('aria-expanded', isOpen);
+        });
+        // Close chat when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.whatsapp-float')) waChat.classList.remove('open');
         });
     </script>
 </body>
