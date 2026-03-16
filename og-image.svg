@@ -17,14 +17,17 @@
   <rect width="1200" height="630" fill="url(#bg)"/>
   <circle cx="1050" cy="100" r="200" fill="white" opacity="0.05"/>
   <circle cx="150" cy="530" r="150" fill="white" opacity="0.05"/>
-  <!-- Power button logo -->
+  <!-- Fridge + EKG logo -->
   <g transform="translate(100, 170)">
     <rect x="-10" y="-10" width="180" height="180" rx="32" fill="url(#iconbg)" opacity="0.5"/>
     <g transform="translate(10, 5) scale(1.6)" fill="none">
-      <path d="M40 16 A38 38 0 1 0 60 16" stroke="white" stroke-width="4" stroke-linecap="round" fill="rgba(255,255,255,0.06)"/>
-      <line x1="50" y1="2" x2="50" y2="36" stroke="white" stroke-width="5.5" stroke-linecap="round"/>
-      <path d="M50 36 L72 53 L67 53 L67 78 L33 78 L33 53 L28 53 Z" fill="white" opacity="0.95"/>
-      <path d="M55 40 L45 58 L51 58 L47 75 L60 54 L54 54 Z" fill="#0054A6"/>
+      <rect x="26" y="8" width="38" height="68" rx="5" stroke="white" stroke-width="3" fill="rgba(255,255,255,0.06)"/>
+      <line x1="26" y1="28" x2="64" y2="28" stroke="white" stroke-width="2.5"/>
+      <line x1="56" y1="16" x2="56" y2="22" stroke="white" stroke-width="3" stroke-linecap="round"/>
+      <line x1="56" y1="36" x2="56" y2="50" stroke="white" stroke-width="3" stroke-linecap="round"/>
+      <polyline points="6,52 24,52 32,32 42,68 50,38 58,60 64,46 76,52 94,52" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+      <line x1="32" y1="76" x2="32" y2="84" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="58" y1="76" x2="58" y2="84" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
     </g>
   </g>
   <!-- Text -->

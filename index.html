@@ -42,7 +42,7 @@
     <link rel="alternate" hreflang="x-default" href="https://quickappraiser.github.io/servitec-quindio/">
 
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%230054A6'/><stop offset='100%25' stop-color='%2300A3E0'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><path d='M40 18 A36 36 0 1 0 60 18' stroke='white' stroke-width='4' stroke-linecap='round' fill='rgba(255,255,255,0.06)'/><line x1='50' y1='4' x2='50' y2='36' stroke='white' stroke-width='5.5' stroke-linecap='round'/><path d='M50 36 L70 51 L66 51 L66 76 L34 76 L34 51 L30 51 Z' fill='white' opacity='0.95'/><path d='M55 40 L46 56 L51 56 L48 73 L59 52 L54 52 Z' fill='%230054A6'/></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%230054A6'/><stop offset='100%25' stop-color='%2300A3E0'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><rect x='26' y='8' width='38' height='68' rx='5' stroke='white' stroke-width='3' fill='rgba(255,255,255,0.06)'/><line x1='26' y1='28' x2='64' y2='28' stroke='white' stroke-width='2.5'/><line x1='56' y1='16' x2='56' y2='22' stroke='white' stroke-width='3' stroke-linecap='round'/><line x1='56' y1='36' x2='56' y2='50' stroke='white' stroke-width='3' stroke-linecap='round'/><polyline points='6,52 24,52 32,32 42,68 50,38 58,60 64,46 76,52 94,52' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' opacity='0.85'/><line x1='32' y1='76' x2='32' y2='84' stroke='white' stroke-width='2.5' stroke-linecap='round'/><line x1='58' y1='76' x2='58' y2='84' stroke='white' stroke-width='2.5' stroke-linecap='round'/></svg>">
 
     <!-- Preconnect & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -600,24 +600,19 @@
         /* ===== ANIMATED LOGO ===== */
         .logo-icon { position: relative; overflow: visible; }
         .logo-icon svg { width: 28px; height: 28px; }
-        @keyframes power-breathe {
+        @keyframes heartbeat-glow {
             0%, 100% { filter: drop-shadow(0 0 2px rgba(77,166,255,0.2)); }
-            50% { filter: drop-shadow(0 0 10px rgba(77,166,255,0.6)) drop-shadow(0 0 20px rgba(0,163,224,0.2)); }
+            50% { filter: drop-shadow(0 0 8px rgba(77,166,255,0.5)) drop-shadow(0 0 16px rgba(0,163,224,0.2)); }
         }
-        @keyframes power-on {
-            0% { filter: drop-shadow(0 0 2px rgba(77,166,255,0.2)); }
-            20% { filter: drop-shadow(0 0 28px rgba(77,166,255,1)) drop-shadow(0 0 50px rgba(0,163,224,0.6)); }
-            50% { filter: drop-shadow(0 0 6px rgba(77,166,255,0.4)); }
-            70% { filter: drop-shadow(0 0 14px rgba(77,166,255,0.7)); }
-            100% { filter: drop-shadow(0 0 8px rgba(77,166,255,0.5)); }
+        @keyframes pulse-trace {
+            0% { stroke-dashoffset: 200; opacity: 0.3; }
+            50% { opacity: 1; }
+            100% { stroke-dashoffset: 0; opacity: 0.85; }
         }
-        @keyframes bolt-electric {
-            0%, 70%, 76%, 82%, 100% { opacity: 1; }
-            73%, 79% { opacity: 0.2; }
-        }
-        .logo-icon svg { animation: power-breathe 3s ease-in-out infinite; }
-        .logo-bolt { animation: bolt-electric 6s ease-in-out infinite; }
-        .logo:hover .logo-icon svg { animation: power-on 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+        .logo-icon svg { animation: heartbeat-glow 3s ease-in-out infinite; }
+        .logo-pulse { stroke-dasharray: 200; }
+        .logo:hover .logo-icon svg { animation: none; filter: drop-shadow(0 0 12px rgba(77,166,255,0.7)); }
+        .logo:hover .logo-pulse { animation: pulse-trace 1.2s ease-out; }
         .logo:hover .logo-icon { transform: scale(1.15); transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1); }
 
         /* ===== SCROLL ANIMATIONS ===== */
@@ -871,14 +866,17 @@
             <a href="#inicio" class="logo" aria-label="ServiTec Quindío - Inicio">
                 <div class="logo-icon" aria-hidden="true">
                     <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none">
-                        <!-- Power circle (gap at top for the power line) -->
-                        <path d="M40 16 A38 38 0 1 0 60 16" stroke="white" stroke-width="4" stroke-linecap="round" fill="rgba(255,255,255,0.06)"/>
-                        <!-- Power line (vertical bar through the gap) -->
-                        <line x1="50" y1="2" x2="50" y2="36" stroke="white" stroke-width="5.5" stroke-linecap="round"/>
-                        <!-- House silhouette inside the circle -->
-                        <path d="M50 36 L72 53 L67 53 L67 78 L33 78 L33 53 L28 53 Z" fill="white" opacity="0.95"/>
-                        <!-- Lightning bolt (blue, cut through the house) -->
-                        <g class="logo-bolt"><path d="M55 40 L45 58 L51 58 L47 75 L60 54 L54 54 Z" fill="#0054A6"/></g>
+                        <!-- Fridge body -->
+                        <rect x="26" y="8" width="38" height="68" rx="5" stroke="white" stroke-width="3" fill="rgba(255,255,255,0.06)"/>
+                        <line x1="26" y1="28" x2="64" y2="28" stroke="white" stroke-width="2.5"/>
+                        <!-- Handles -->
+                        <line x1="56" y1="16" x2="56" y2="22" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                        <line x1="56" y1="36" x2="56" y2="50" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                        <!-- EKG heartbeat line -->
+                        <polyline class="logo-pulse" points="6,52 24,52 32,32 42,68 50,38 58,60 64,46 76,52 94,52" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+                        <!-- Fridge feet -->
+                        <line x1="32" y1="76" x2="32" y2="84" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                        <line x1="58" y1="76" x2="58" y2="84" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
                     </svg>
                 </div>
                 ServiTec <span>Quindío</span>
@@ -1304,7 +1302,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="#inicio" class="logo" aria-label="ServiTec Quindío - Inicio"><div class="logo-icon" aria-hidden="true"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none"><path d="M40 16 A38 38 0 1 0 60 16" stroke="white" stroke-width="4" stroke-linecap="round" fill="rgba(255,255,255,0.06)"/><line x1="50" y1="2" x2="50" y2="36" stroke="white" stroke-width="5.5" stroke-linecap="round"/><path d="M50 36 L72 53 L67 53 L67 78 L33 78 L33 53 L28 53 Z" fill="white" opacity="0.95"/><g class="logo-bolt"><path d="M55 40 L45 58 L51 58 L47 75 L60 54 L54 54 Z" fill="#0054A6"/></g></svg></div>ServiTec <span>Quindío</span></a>
+                    <a href="#inicio" class="logo" aria-label="ServiTec Quindío - Inicio"><div class="logo-icon" aria-hidden="true"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none"><rect x="26" y="8" width="38" height="68" rx="5" stroke="white" stroke-width="3" fill="rgba(255,255,255,0.06)"/><line x1="26" y1="28" x2="64" y2="28" stroke="white" stroke-width="2.5"/><line x1="56" y1="16" x2="56" y2="22" stroke="white" stroke-width="3" stroke-linecap="round"/><line x1="56" y1="36" x2="56" y2="50" stroke="white" stroke-width="3" stroke-linecap="round"/><polyline class="logo-pulse" points="6,52 24,52 32,32 42,68 50,38 58,60 64,46 76,52 94,52" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/><line x1="32" y1="76" x2="32" y2="84" stroke="white" stroke-width="2.5" stroke-linecap="round"/><line x1="58" y1="76" x2="58" y2="84" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg></div>ServiTec <span>Quindío</span></a>
                     <p>Servicio técnico profesional #1 en reparación de electrodomésticos a domicilio en Armenia y todo el departamento del Quindío. Neveras, lavadoras, calentadores, estufas, aires acondicionados y relés ahorradores de energía. Técnicos certificados con garantía en cada trabajo.</p>
                 </div>
                 <div>
