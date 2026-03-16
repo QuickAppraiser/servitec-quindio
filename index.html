@@ -24,6 +24,21 @@
     <meta property="og:locale" content="es_CO">
     <meta property="og:url" content="https://quickappraiser.github.io/servitec-quindio/">
     <meta property="og:site_name" content="ServiTec Quindío">
+    <meta property="og:image" content="https://quickappraiser.github.io/servitec-quindio/og-image.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="ServiTec Quindío - Reparación de Electrodomésticos en Armenia y Todo el Quindío">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ServiTec Quindío | Reparación de Electrodomésticos #1 en Armenia">
+    <meta name="twitter:description" content="Servicio técnico profesional a domicilio en Armenia y todo el Quindío. Neveras, lavadoras, calentadores, estufas y aires acondicionados. WhatsApp 3188383917.">
+    <meta name="twitter:image" content="https://quickappraiser.github.io/servitec-quindio/og-image.svg">
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="es-CO" href="https://quickappraiser.github.io/servitec-quindio/">
+    <link rel="alternate" hreflang="es" href="https://quickappraiser.github.io/servitec-quindio/">
+    <link rel="alternate" hreflang="x-default" href="https://quickappraiser.github.io/servitec-quindio/">
 
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>">
@@ -253,7 +268,7 @@
             --border-light: #162a46;
             --text: #e2e8f0;
             --text-secondary: #94a3b8;
-            --text-muted: #64748b;
+            --text-muted: #94a3b8;
             --text-heading: #f1f5f9;
             --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
             --shadow-md: 0 4px 14px rgba(0,0,0,0.4);
@@ -431,11 +446,7 @@
         .coverage { padding: 100px 0; background: var(--bg-alt); }
         .coverage .container { text-align: center; }
         .coverage-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; text-align: left; }
-        .coverage-map-placeholder { background: linear-gradient(135deg, var(--primary-light), var(--accent-light)); border-radius: var(--radius-lg); padding: 50px 40px; text-align: center; position: relative; overflow: hidden; }
-        .coverage-map-placeholder::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 200px; height: 200px; border: 3px dashed var(--primary); opacity: 0.15; border-radius: 50%; }
-        .coverage-map-placeholder i { font-size: 5rem; color: var(--primary); opacity: 0.7; margin-bottom: 20px; }
-        .coverage-map-placeholder h3 { font-family: 'Poppins', sans-serif; font-size: 1.5rem; color: var(--primary); margin-bottom: 8px; }
-        .coverage-map-placeholder p { color: var(--text-muted); font-size: 0.95rem; }
+        .coverage-map { border-radius: var(--radius-lg); overflow: hidden; }
         .coverage-phone-box { margin-top: 24px; padding: 20px; background: rgba(0,84,166,0.08); border-radius: 12px; }
         .coverage-phone-box p { font-size: 0.9rem; color: var(--primary); font-weight: 600; }
 
@@ -467,7 +478,7 @@
         .faq-question i { color: var(--primary); transition: transform 0.3s; flex-shrink: 0; }
         .faq-item.open .faq-question i { transform: rotate(180deg); }
         .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-        .faq-item.open .faq-answer { max-height: 250px; }
+        .faq-item.open .faq-answer { max-height: 500px; }
         .faq-answer p { padding: 0 24px 20px; font-size: 0.92rem; color: var(--text-muted); line-height: 1.7; }
 
         /* ===== TESTIMONIALS ===== */
@@ -516,10 +527,6 @@
 
         /* ===== WHATSAPP FLOAT ===== */
         .whatsapp-float { position: fixed; bottom: 24px; right: 24px; z-index: 9999; }
-        .whatsapp-float a { display: flex; align-items: center; gap: 12px; background: var(--green-whatsapp); color: white; padding: 14px 24px; border-radius: 50px; font-weight: 600; font-size: 1rem; box-shadow: 0 6px 24px rgba(37,211,102,0.5); transition: transform 0.3s, box-shadow 0.3s; animation: pulse-green 2s infinite; }
-        .whatsapp-float a:hover { transform: scale(1.05); box-shadow: 0 8px 30px rgba(37,211,102,0.6); }
-        .whatsapp-float a i { font-size: 1.4rem; }
-
         /* ===== BACK TO TOP ===== */
         .back-to-top { position: fixed; bottom: 24px; left: 24px; z-index: 9999; width: 48px; height: 48px; background: var(--primary); color: white; border: none; border-radius: 50%; font-size: 1.2rem; cursor: pointer; box-shadow: var(--shadow-md); opacity: 0; visibility: hidden; transform: translateY(20px); transition: opacity 0.3s, visibility 0.3s, transform 0.3s, background 0.3s; }
         .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
@@ -791,8 +798,8 @@
 
         /* ===== URGENCY INDICATOR ===== */
         .urgency-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.25); padding: 6px 14px; border-radius: 50px; font-size: 0.82rem; font-weight: 600; color: #10b981; margin-top: 20px; }
-        .urgency-dot { width: 8px; height: 8px; background: #10b981; border-radius: 50%; position: relative; }
-        .urgency-dot::before { content: ''; position: absolute; inset: -3px; border-radius: 50%; background: rgba(16,185,129,0.4); animation: ping 1.5s cubic-bezier(0,0,0.2,1) infinite; }
+        .urgency-dot { width: 8px; height: 8px; background: var(--urgency-color, #10b981); border-radius: 50%; position: relative; }
+        .urgency-dot::before { content: ''; position: absolute; inset: -3px; border-radius: 50%; background: var(--urgency-color-alpha, rgba(16,185,129,0.4)); animation: ping 1.5s cubic-bezier(0,0,0.2,1) infinite; }
         [data-theme="dark"] .urgency-badge { background: rgba(16,185,129,0.15); border-color: rgba(16,185,129,0.3); }
 
         /* ===== PRICING TAG ===== */
@@ -878,8 +885,6 @@
             .trust-items { gap: 24px; }
             .footer-grid { grid-template-columns: 1fr; }
             .cta-box { padding: 48px 24px; }
-            .whatsapp-float a span { display: none; }
-            .whatsapp-float a { padding: 16px; border-radius: 50%; }
             .hero-blob { display: none; }
             .hero-scene { width: 300px; height: 300px; }
             .scene-ring { width: 250px; height: 250px; margin: -125px 0 0 -125px; }
@@ -903,7 +908,7 @@
 </head>
 <body>
     <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-    <a href="#servicios" class="skip-link">Ir al contenido principal</a>
+    <a href="#main-content" class="skip-link">Ir al contenido principal</a>
 
     <!-- NAVBAR -->
     <nav class="navbar" id="navbar" role="navigation" aria-label="Navegación principal">
@@ -937,6 +942,7 @@
         </div>
     </nav>
 
+    <main id="main-content">
     <!-- HERO -->
     <section class="hero" id="inicio">
         <!-- Animated gradient blobs -->
@@ -971,7 +977,7 @@
                     <a href="https://wa.me/573188383917?text=Hola%2C%20necesito%20un%20servicio%20t%C3%A9cnico%20para%20mi%20electrodom%C3%A9stico.%20%C2%BFMe%20pueden%20ayudar%3F" target="_blank" rel="noopener noreferrer" class="btn-primary"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar Servicio</a>
                     <a href="#servicios" class="btn-secondary"><i class="fas fa-tools" aria-hidden="true"></i> Ver Servicios</a>
                 </div>
-                <div class="urgency-badge"><span class="urgency-dot"></span> Técnico disponible ahora en Armenia</div>
+                <div class="urgency-badge" id="urgencyBadge"><span class="urgency-dot"></span> <span id="urgencyText">Técnico disponible ahora en Armenia</span></div>
             </div>
             <div class="hero-visual">
                 <div class="hero-scene" aria-hidden="true">
@@ -1214,10 +1220,8 @@
             <h2 class="section-title">Servicio Técnico a Domicilio en Todo el Quindío</h2>
             <p class="section-subtitle">Atendemos los 12 municipios del departamento. Servicio a domicilio sin importar dónde te encuentres en el Quindío.</p>
             <div class="coverage-content">
-                <div class="coverage-map-placeholder slide-left">
-                    <i class="fas fa-map-location-dot" aria-hidden="true"></i>
-                    <h3>Departamento del Quindío</h3>
-                    <p>Cobertura total en los 12 municipios</p>
+                <div class="coverage-map slide-left">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254632.4747018959!2d-75.82!3d4.45!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e389080c4e71c49%3A0xfa6a7cce51a140d5!2sQuind%C3%ADo%2C%20Colombia!5e0!3m2!1ses!2sco!4v1710500000000!5m2!1ses!2sco" width="100%" height="350" style="border:0; border-radius: var(--radius-lg);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de cobertura ServiTec Quindío"></iframe>
                     <div class="coverage-phone-box"><p><i class="fas fa-phone" aria-hidden="true"></i> Agenda tu cita: <a href="tel:+573188383917">318 838 3917</a></p></div>
                 </div>
                 <div class="cities-grid slide-right">
@@ -1261,18 +1265,18 @@
             <h2 class="section-title">Resolvemos tus Dudas</h2>
             <p class="section-subtitle">Las respuestas a las preguntas más comunes sobre nuestro servicio técnico en Armenia y el Quindío.</p>
             <div class="faq-grid">
-                <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false">¿Dónde reparan electrodomésticos en Armenia, Quindío?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer"><p>ServiTec Quindío ofrece servicio técnico a domicilio en Armenia y los 12 municipios del Quindío. Contáctanos por WhatsApp al 3188383917 y un técnico te atiende hoy mismo.</p></div></div>
-                <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false">¿Qué electrodomésticos reparan?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer"><p>Reparamos neveras, lavadoras, secadoras, calentadores de agua, estufas, hornos y aires acondicionados de todas las marcas: Samsung, LG, Whirlpool, Mabe, Haceb, Challenger, Electrolux y más.</p></div></div>
-                <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false">¿Cuál es el horario de atención?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer"><p>Nuestro horario es de lunes a viernes de 8:00 AM a 6:00 PM. Contáctanos por WhatsApp al 3188383917 para agendar tu cita.</p></div></div>
-                <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false">¿Los servicios incluyen garantía?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer"><p>Sí, todos nuestros servicios incluyen garantía por escrito. Si el problema persiste después de la reparación, regresamos sin costo adicional.</p></div></div>
-                <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false">¿Cuánto cuesta la reparación de un electrodoméstico?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer"><p>La visita técnica tiene un costo de $50.000 COP, que incluye diagnóstico completo. Si decides hacer la reparación con nosotros, ese valor se descuenta del costo total. El precio final depende del tipo de electrodoméstico y la falla. Aceptamos efectivo, Nequi y Daviplata.</p></div></div>
-                <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false">¿Cuánto puedo ahorrar con el relé ahorrador?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer"><p>Con la instalación de un relé con capacitador, puedes reducir el consumo eléctrico de tu nevera hasta en un 30%. El ahorro varía según el modelo y estado del equipo.</p></div></div>
-                <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false">¿Atienden en Calarcá, Montenegro y otros municipios?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer"><p>Sí, atendemos los 12 municipios del Quindío: Armenia, Calarcá, Montenegro, Circasia, La Tebaida, Salento, Filandia, Quimbaya, Buenavista, Córdoba, Génova y Pijao.</p></div></div>
-                <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false">¿Mi nevera no enfría, qué puede ser?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer"><p>Si tu nevera prende pero no enfría, las causas más comunes son: falta de gas refrigerante, compresor dañado, termostato defectuoso o condensador sucio. Un técnico de ServiTec Quindío puede diagnosticar y reparar el problema el mismo día en Armenia y todo el Quindío.</p></div></div>
-                <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false">¿Por qué mi lavadora no centrifuga?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer"><p>Las razones más comunes por las que una lavadora no centrifuga son: correa rota o desgastada, capacitor de arranque dañado, carbones del motor gastados o problema en la tarjeta electrónica. Reparamos lavadoras Samsung, LG, Whirlpool, Mabe y Haceb a domicilio.</p></div></div>
-                <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false">¿Reparan neveras y lavadoras Samsung, LG y Whirlpool en Armenia?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer"><p>Sí, somos especialistas en reparación de electrodomésticos Samsung, LG, Whirlpool, Mabe, Haceb, Challenger, Electrolux y Centrales en Armenia y todo el Quindío. Usamos repuestos compatibles y ofrecemos garantía en cada reparación.</p></div></div>
-                <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false">¿Hacen mantenimiento preventivo de aires acondicionados?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer"><p>Sí, ofrecemos servicio completo de mantenimiento de aires acondicionados: limpieza de filtros, limpieza de serpentín, revisión de gas y verificación del sistema eléctrico. El mantenimiento preventivo ahorra energía y prolonga la vida útil del equipo.</p></div></div>
-                <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false">¿Ofrecen servicio de reparación urgente en Armenia?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer"><p>Sí, ofrecemos atención prioritaria para reparaciones urgentes en Armenia y municipios cercanos. Contáctanos por WhatsApp al 3188383917 indicando que es urgente y agendaremos un técnico lo antes posible.</p></div></div>
+                <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false" aria-controls="faq-1">¿Dónde reparan electrodomésticos en Armenia, Quindío?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer" id="faq-1" role="region"><p>ServiTec Quindío ofrece servicio técnico a domicilio en Armenia y los 12 municipios del Quindío. Contáctanos por WhatsApp al 3188383917 y un técnico te atiende hoy mismo.</p></div></div>
+                <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false" aria-controls="faq-2">¿Qué electrodomésticos reparan?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer" id="faq-2" role="region"><p>Reparamos neveras, lavadoras, secadoras, calentadores de agua, estufas, hornos y aires acondicionados de todas las marcas: Samsung, LG, Whirlpool, Mabe, Haceb, Challenger, Electrolux y más.</p></div></div>
+                <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false" aria-controls="faq-3">¿Cuál es el horario de atención?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer" id="faq-3" role="region"><p>Nuestro horario es de lunes a viernes de 8:00 AM a 6:00 PM. Contáctanos por WhatsApp al 3188383917 para agendar tu cita.</p></div></div>
+                <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false" aria-controls="faq-4">¿Los servicios incluyen garantía?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer" id="faq-4" role="region"><p>Sí, todos nuestros servicios incluyen garantía por escrito. Si el problema persiste después de la reparación, regresamos sin costo adicional.</p></div></div>
+                <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false" aria-controls="faq-5">¿Cuánto cuesta la reparación de un electrodoméstico?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer" id="faq-5" role="region"><p>La visita técnica tiene un costo de $50.000 COP, que incluye diagnóstico completo. Si decides hacer la reparación con nosotros, ese valor se descuenta del costo total. El precio final depende del tipo de electrodoméstico y la falla. Aceptamos efectivo, Nequi y Daviplata.</p></div></div>
+                <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false" aria-controls="faq-6">¿Cuánto puedo ahorrar con el relé ahorrador?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer" id="faq-6" role="region"><p>Con la instalación de un relé con capacitador, puedes reducir el consumo eléctrico de tu nevera hasta en un 30%. El ahorro varía según el modelo y estado del equipo.</p></div></div>
+                <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false" aria-controls="faq-7">¿Atienden en Calarcá, Montenegro y otros municipios?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer" id="faq-7" role="region"><p>Sí, atendemos los 12 municipios del Quindío: Armenia, Calarcá, Montenegro, Circasia, La Tebaida, Salento, Filandia, Quimbaya, Buenavista, Córdoba, Génova y Pijao.</p></div></div>
+                <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false" aria-controls="faq-8">¿Mi nevera no enfría, qué puede ser?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer" id="faq-8" role="region"><p>Si tu nevera prende pero no enfría, las causas más comunes son: falta de gas refrigerante, compresor dañado, termostato defectuoso o condensador sucio. Un técnico de ServiTec Quindío puede diagnosticar y reparar el problema el mismo día en Armenia y todo el Quindío.</p></div></div>
+                <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false" aria-controls="faq-9">¿Por qué mi lavadora no centrifuga?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer" id="faq-9" role="region"><p>Las razones más comunes por las que una lavadora no centrifuga son: correa rota o desgastada, capacitor de arranque dañado, carbones del motor gastados o problema en la tarjeta electrónica. Reparamos lavadoras Samsung, LG, Whirlpool, Mabe y Haceb a domicilio.</p></div></div>
+                <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false" aria-controls="faq-10">¿Reparan neveras y lavadoras Samsung, LG y Whirlpool en Armenia?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer" id="faq-10" role="region"><p>Sí, somos especialistas en reparación de electrodomésticos Samsung, LG, Whirlpool, Mabe, Haceb, Challenger, Electrolux y Centrales en Armenia y todo el Quindío. Usamos repuestos compatibles y ofrecemos garantía en cada reparación.</p></div></div>
+                <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false" aria-controls="faq-11">¿Hacen mantenimiento preventivo de aires acondicionados?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer" id="faq-11" role="region"><p>Sí, ofrecemos servicio completo de mantenimiento de aires acondicionados: limpieza de filtros, limpieza de serpentín, revisión de gas y verificación del sistema eléctrico. El mantenimiento preventivo ahorra energía y prolonga la vida útil del equipo.</p></div></div>
+                <div class="faq-item fade-in"><button class="faq-question" aria-expanded="false" aria-controls="faq-12">¿Ofrecen servicio de reparación urgente en Armenia?<i class="fas fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer" id="faq-12" role="region"><p>Sí, ofrecemos atención prioritaria para reparaciones urgentes en Armenia y municipios cercanos. Contáctanos por WhatsApp al 3188383917 indicando que es urgente y agendaremos un técnico lo antes posible.</p></div></div>
             </div>
         </div>
     </section>
@@ -1325,6 +1329,8 @@
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- FOOTER -->
     <footer class="footer" role="contentinfo">
@@ -1422,6 +1428,28 @@
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
             if (!localStorage.getItem('theme')) setTheme(e.matches ? 'dark' : 'light');
         });
+
+        // === URGENCY BADGE TIME-AWARE ===
+        (function() {
+            const badge = document.getElementById('urgencyBadge');
+            const text = document.getElementById('urgencyText');
+            const dot = badge.querySelector('.urgency-dot');
+            const now = new Date().toLocaleString('en-US', { timeZone: 'America/Bogota' });
+            const bogota = new Date(now);
+            const day = bogota.getDay();
+            const hour = bogota.getHours();
+            const isBusinessHours = day >= 1 && day <= 5 && hour >= 8 && hour < 18;
+            if (isBusinessHours) {
+                text.textContent = 'Técnico disponible ahora en Armenia';
+            } else {
+                text.textContent = 'Escríbenos y te atendemos el próximo día hábil';
+                dot.style.setProperty('--urgency-color', '#f59e0b');
+                dot.style.setProperty('--urgency-color-alpha', 'rgba(245,158,11,0.4)');
+                badge.style.background = 'rgba(245,158,11,0.1)';
+                badge.style.borderColor = 'rgba(245,158,11,0.25)';
+                badge.style.color = '#f59e0b';
+            }
+        })();
 
         // === SCROLL PROGRESS BAR ===
         const scrollProgress = document.getElementById('scrollProgress');
@@ -1533,8 +1561,17 @@
         document.querySelectorAll('.faq-question').forEach(btn => {
             btn.addEventListener('click', () => {
                 const item = btn.parentElement, wasOpen = item.classList.contains('open');
-                document.querySelectorAll('.faq-item.open').forEach(o => { o.classList.remove('open'); o.querySelector('.faq-question').setAttribute('aria-expanded', 'false'); });
-                if (!wasOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+                const answer = item.querySelector('.faq-answer');
+                document.querySelectorAll('.faq-item.open').forEach(o => {
+                    o.classList.remove('open');
+                    o.querySelector('.faq-answer').style.maxHeight = null;
+                    o.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+                if (!wasOpen) {
+                    item.classList.add('open');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    btn.setAttribute('aria-expanded', 'true');
+                }
             });
         });
 
@@ -1558,33 +1595,50 @@
         });
 
         // === SOCIAL PROOF TOAST NOTIFICATIONS ===
-        const toastData = [
-            { name: 'Carolina', city: 'Armenia', service: 'solicitó reparación de nevera Samsung' },
-            { name: 'Andrés', city: 'Calarcá', service: 'pidió servicio para lavadora LG' },
-            { name: 'Sandra', city: 'Montenegro', service: 'solicitó instalación de relé ahorrador' },
-            { name: 'Luis', city: 'Armenia', service: 'pidió mantenimiento de aire acondicionado' },
-            { name: 'Diana', city: 'Circasia', service: 'solicitó reparación de estufa Haceb' },
-            { name: 'Roberto', city: 'La Tebaida', service: 'pidió revisión de calentador de agua' },
-            { name: 'Martha', city: 'Armenia', service: 'solicitó reparación de lavadora Whirlpool' },
-            { name: 'Jorge', city: 'Quimbaya', service: 'pidió reparación de nevera Mabe' },
-            { name: 'Paola', city: 'Armenia', service: 'solicitó servicio urgente para nevera' },
-            { name: 'Carlos', city: 'Salento', service: 'pidió instalación de aire acondicionado' }
-        ];
-        const toast = document.getElementById('toast');
-        const toastTitle = document.getElementById('toastTitle');
-        const toastTime = document.getElementById('toastTime');
-        let toastIndex = 0;
-        function showToast() {
-            const d = toastData[toastIndex % toastData.length];
-            const mins = Math.floor(Math.random() * 15) + 2;
-            toastTitle.textContent = `${d.name} en ${d.city} ${d.service}`;
-            toastTime.textContent = `Hace ${mins} minutos`;
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 4000);
-            toastIndex++;
-        }
-        // Show first toast after 8s, then every 15s
-        setTimeout(() => { showToast(); setInterval(showToast, 15000); }, 8000);
+        (function() {
+            const now = new Date().toLocaleString('en-US', { timeZone: 'America/Bogota' });
+            const bogota = new Date(now);
+            const day = bogota.getDay();
+            const hour = bogota.getHours();
+            const isActive = day >= 1 && day <= 6 && hour >= 7 && hour < 20;
+            if (!isActive) return;
+
+            const toastData = [
+                { name: 'Carolina', city: 'Armenia', service: 'solicitó reparación de nevera Samsung' },
+                { name: 'Andrés', city: 'Calarcá', service: 'pidió servicio para lavadora LG' },
+                { name: 'Sandra', city: 'Montenegro', service: 'solicitó instalación de relé ahorrador' },
+                { name: 'Luis', city: 'Armenia', service: 'pidió mantenimiento de aire acondicionado' },
+                { name: 'Diana', city: 'Circasia', service: 'solicitó reparación de estufa Haceb' },
+                { name: 'Roberto', city: 'La Tebaida', service: 'pidió revisión de calentador de agua' },
+                { name: 'Martha', city: 'Armenia', service: 'solicitó reparación de lavadora Whirlpool' },
+                { name: 'Jorge', city: 'Quimbaya', service: 'pidió reparación de nevera Mabe' },
+                { name: 'Paola', city: 'Armenia', service: 'solicitó servicio urgente para nevera' },
+                { name: 'Carlos', city: 'Salento', service: 'pidió instalación de aire acondicionado' }
+            ];
+            const toast = document.getElementById('toast');
+            const toastTitle = document.getElementById('toastTitle');
+            const toastTime = document.getElementById('toastTime');
+            let toastIndex = Math.floor(Math.random() * toastData.length);
+            let toastCount = 0;
+            const maxToasts = 5;
+            function showToast() {
+                if (toastCount >= maxToasts) return;
+                const d = toastData[toastIndex % toastData.length];
+                const mins = Math.floor(Math.random() * 25) + 3;
+                toastTitle.textContent = `${d.name} en ${d.city} ${d.service}`;
+                toastTime.textContent = `Hace ${mins} minutos`;
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 5000);
+                toastIndex++;
+                toastCount++;
+                if (toastCount < maxToasts) {
+                    const nextDelay = 20000 + Math.floor(Math.random() * 15000);
+                    setTimeout(showToast, nextDelay);
+                }
+            }
+            toast.addEventListener('click', () => { toast.classList.remove('show'); toastCount = maxToasts; });
+            setTimeout(showToast, 12000 + Math.floor(Math.random() * 8000));
+        })();
 
         // === WHATSAPP CHAT TOGGLE ===
         const waToggle = document.getElementById('waToggle');
