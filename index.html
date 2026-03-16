@@ -41,7 +41,7 @@
     <link rel="alternate" hreflang="x-default" href="https://quickappraiser.github.io/servitec-quindio/">
 
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%230054A6'/><stop offset='100%25' stop-color='%2300A3E0'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><rect x='15' y='10' width='38' height='65' rx='5' fill='none' stroke='white' stroke-width='5'/><line x1='15' y1='30' x2='53' y2='30' stroke='white' stroke-width='4'/><rect x='44' y='15' width='4' height='8' rx='2' fill='white'/><rect x='44' y='37' width='4' height='14' rx='2' fill='white'/><line x1='52' y1='85' x2='76' y2='25' stroke='white' stroke-width='7' stroke-linecap='round'/><circle cx='79' cy='19' r='9' fill='none' stroke='white' stroke-width='5'/></svg>">
 
     <!-- Preconnect & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -647,8 +647,10 @@
         /* ===== ANIMATED LOGO ===== */
         .logo-icon { position: relative; overflow: hidden; }
         .logo-icon svg { width: 26px; height: 26px; }
-        .logo-icon .gear { transform-origin: center; animation: rotate-slow 8s linear infinite; }
-        .logo:hover .logo-icon .gear { animation-duration: 2s; }
+        @keyframes wrench-sway { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-4deg); } }
+        @keyframes wrench-tap { 0% { transform: rotate(0deg); } 20% { transform: rotate(-12deg); } 40% { transform: rotate(8deg); } 60% { transform: rotate(-5deg); } 80% { transform: rotate(3deg); } 100% { transform: rotate(0deg); } }
+        .logo-wrench { transform-origin: 68px 58px; animation: wrench-sway 3s ease-in-out infinite; }
+        .logo:hover .logo-wrench { animation: wrench-tap 0.6s ease; }
         .logo:hover .logo-icon { transform: scale(1.1); transition: transform 0.3s; }
 
         /* ===== SCROLL ANIMATIONS ===== */
@@ -915,9 +917,16 @@
         <div class="container">
             <a href="#inicio" class="logo" aria-label="ServiTec Quindío - Inicio">
                 <div class="logo-icon" aria-hidden="true">
-                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="white">
-                        <g class="gear"><path d="M50 15a3 3 0 0 1 3 3v5.2a22 22 0 0 1 8.5 3.5l3.7-3.7a3 3 0 0 1 4.2 4.2l-3.7 3.7A22 22 0 0 1 69.2 40H74.5a3 3 0 1 1 0 6H69.2a22 22 0 0 1-3.5 8.5l3.7 3.7a3 3 0 0 1-4.2 4.2l-3.7-3.7a22 22 0 0 1-8.5 3.5V67.5a3 3 0 1 1-6 0V62.2a22 22 0 0 1-8.5-3.5l-3.7 3.7a3 3 0 0 1-4.2-4.2l3.7-3.7A22 22 0 0 1 30.8 46H25.5a3 3 0 1 1 0-6H30.8a22 22 0 0 1 3.5-8.5l-3.7-3.7a3 3 0 0 1 4.2-4.2l3.7 3.7A22 22 0 0 1 47 23.8V18a3 3 0 0 1 3-3zm0 20a8 8 0 1 0 0 16 8 8 0 0 0 0-16z"/></g>
-                        <path d="M28 62l-12 22a4 4 0 0 0 3.5 5.8h5a4 4 0 0 0 3.5-2.1L40 68" stroke="white" stroke-width="5" fill="none" stroke-linecap="round"/>
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none">
+                        <rect x="10" y="5" width="45" height="78" rx="6" stroke="white" stroke-width="5"/>
+                        <line x1="10" y1="30" x2="55" y2="30" stroke="white" stroke-width="4"/>
+                        <rect x="46" y="13" width="4" height="9" rx="2" fill="white"/>
+                        <rect x="46" y="38" width="4" height="16" rx="2" fill="white"/>
+                        <g opacity="0.5"><line x1="32" y1="13" x2="32" y2="24" stroke="white" stroke-width="2.5" stroke-linecap="round"/><line x1="26" y1="18.5" x2="38" y2="18.5" stroke="white" stroke-width="2.5" stroke-linecap="round"/></g>
+                        <g class="logo-wrench">
+                            <line x1="56" y1="90" x2="80" y2="28" stroke="white" stroke-width="7" stroke-linecap="round"/>
+                            <circle cx="83" cy="22" r="10" stroke="white" stroke-width="5"/>
+                        </g>
                     </svg>
                 </div>
                 ServiTec <span>Quindío</span>
@@ -1337,7 +1346,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="#inicio" class="logo" aria-label="ServiTec Quindío - Inicio"><div class="logo-icon" aria-hidden="true"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="white"><g class="gear"><path d="M50 15a3 3 0 0 1 3 3v5.2a22 22 0 0 1 8.5 3.5l3.7-3.7a3 3 0 0 1 4.2 4.2l-3.7 3.7A22 22 0 0 1 69.2 40H74.5a3 3 0 1 1 0 6H69.2a22 22 0 0 1-3.5 8.5l3.7 3.7a3 3 0 0 1-4.2 4.2l-3.7-3.7a22 22 0 0 1-8.5 3.5V67.5a3 3 0 1 1-6 0V62.2a22 22 0 0 1-8.5-3.5l-3.7 3.7a3 3 0 0 1-4.2-4.2l3.7-3.7A22 22 0 0 1 30.8 46H25.5a3 3 0 1 1 0-6H30.8a22 22 0 0 1 3.5-8.5l-3.7-3.7a3 3 0 0 1 4.2-4.2l3.7 3.7A22 22 0 0 1 47 23.8V18a3 3 0 0 1 3-3zm0 20a8 8 0 1 0 0 16 8 8 0 0 0 0-16z"/></g><path d="M28 62l-12 22a4 4 0 0 0 3.5 5.8h5a4 4 0 0 0 3.5-2.1L40 68" stroke="white" stroke-width="5" fill="none" stroke-linecap="round"/></svg></div>ServiTec <span>Quindío</span></a>
+                    <a href="#inicio" class="logo" aria-label="ServiTec Quindío - Inicio"><div class="logo-icon" aria-hidden="true"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none"><rect x="10" y="5" width="45" height="78" rx="6" stroke="white" stroke-width="5"/><line x1="10" y1="30" x2="55" y2="30" stroke="white" stroke-width="4"/><rect x="46" y="13" width="4" height="9" rx="2" fill="white"/><rect x="46" y="38" width="4" height="16" rx="2" fill="white"/><g opacity="0.5"><line x1="32" y1="13" x2="32" y2="24" stroke="white" stroke-width="2.5" stroke-linecap="round"/><line x1="26" y1="18.5" x2="38" y2="18.5" stroke="white" stroke-width="2.5" stroke-linecap="round"/></g><g class="logo-wrench"><line x1="56" y1="90" x2="80" y2="28" stroke="white" stroke-width="7" stroke-linecap="round"/><circle cx="83" cy="22" r="10" stroke="white" stroke-width="5"/></g></svg></div>ServiTec <span>Quindío</span></a>
                     <p>Servicio técnico profesional #1 en reparación de electrodomésticos a domicilio en Armenia y todo el departamento del Quindío. Neveras, lavadoras, calentadores, estufas, aires acondicionados y relés ahorradores de energía. Técnicos certificados con garantía en cada trabajo.</p>
                 </div>
                 <div>
